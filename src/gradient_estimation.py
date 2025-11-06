@@ -2,7 +2,7 @@ import os
 import numpy as np
 from PIL import Image
 import pdqhash
-from perturb import *
+from image_utils import *
 
 def main():
     imgs = [f for f in os.listdir(INPUT_DIR)
