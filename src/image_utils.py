@@ -56,7 +56,7 @@ def pdq_dihedral_hashes(arr_uint8_rgb):
     hashes8 = [np.array(h, dtype=np.uint8) for h in hashes8]
     return hashes8, quality
 
-def pdq_best_distance(hashes_a, hashes_b):
+def pdq_hamming_distance(hashes_a, hashes_b):
     """
     Brute-force best Hamming distance across dihedral variants.
     """
@@ -89,9 +89,9 @@ def pdq_distance_gray(x_float, delta_float):
     hv2, q2 = pdq_dihedral_hashes(xpert_rgb_u8)
 
     # 4) best Hamming distance across 8x8 pairs + similarity
-    dist = pdq_best_distance(hv1, hv2)       # 0..256
-
-    return dist
+    dist = pdq_hamming_distance(hv1, hv2)       # 0..256
+    sim = (256 - dist) / 256.0
+    return dist, sim, q1, q2
 
 # === IMPLEMENTATION OF ALGORITHM 3: InverseDelta ===
 
@@ -217,7 +217,7 @@ def process_image(path):
     xpert_for_pdq = _ensure_rgb_uint8(to_uint8(x_pert))  # small pert -> RGB for pdq
     hv1, q1 = pdq_dihedral_hashes(x_for_pdq)
     hv2, q2 = pdq_dihedral_hashes(xpert_for_pdq)
-    pdq_dist = pdq_best_distance(hv1, hv2)
+    pdq_dist = pdq_hamming_distance(hv1, hv2)
     pdq_sim = (256 - pdq_dist) / 256.0
 
     if REPORT:
