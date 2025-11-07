@@ -111,11 +111,11 @@ def iterative_greedy_attack(orig_rgb, x_small, its=50, M=200, eps_step=0.005, ep
         history.append((t+1, dist_cum, sim_cum))
 
         # debug/log
-        print(f"iter {t+1:3d}: best_candidate_dist={best_dist:3d} => cum_dist={dist_cum:3d} PDQsim={sim_cum:.3f} q={qorig:.1f}/{qpert:.1f}")
+        #print(f"iter {t+1:3d}: best_candidate_dist={best_dist:3d} => cum_dist={dist_cum:3d} PDQsim={sim_cum:.3f} q={qorig:.1f}/{qpert:.1f}")
 
         # stopping rule: if we exceed some PDQ distance threshold, break
         if dist_cum >= threshold:   # example threshold, tune to your use-case
-            print("Reached PDQ distance target; stopping early.")
+            #print("Reached PDQ distance target; stopping early.")
             break
 
     # Produce final mapped RGB perturbation to apply to the original image
