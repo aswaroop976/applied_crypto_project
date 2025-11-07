@@ -1,7 +1,7 @@
 import os
 import numpy as np
 from PIL import Image
-import pdqhash
+import pdqhash, imagehash
 
 # === CONFIGURATION ===
 INPUT_DIR = "images_in"
@@ -74,6 +74,33 @@ def pdq_hamming_distance(hashes_a, hashes_b):
                 if best == 0:
                     return 0
     return best
+
+def phash_distance_gray(x_float, delta_float):
+    x_pert = np.clip(x_float + delta_float, 0.0, 1.0)
+
+    x_rgb_u8 = _ensure_rgb_uint8(to_uint8(x_float))
+    xpert_rgb_u8 = _ensure_rgb_uint8(to_uint8(x_pert))
+
+    h_x = imagehash.phash(Image.fromarray(x_rgb_u8))
+    h_pert = imagehash.phash(Image.fromarray(xpert_rgb_u8))
+    dist = int(np.abs(h_pert - h_x))   # ImageHash implements Hamming distance via subtraction
+    nbits = h_x.hash.size
+    sim = 1.0 - (dist / float(nbits))
+    return dist, sim
+
+def phash_distance_rgb(a_float, b_float):
+    img_a = _ensure_rgb_uint8(to_uint8(a_float))
+    img_b = _ensure_rgb_uint8(to_uint8(b_float))
+
+    h_a = imagehash.phash(Image.fromarray(img_a))
+    h_b = imagehash.phash(Image.fromarray(img_b))
+
+    dist = int(np.abs(h_b - h_a))
+    nbits = h_a.hash.size
+
+    sim = 1.0 - (dist / float(nbits))
+    return dist, sim
+
 
 def pdq_distance_gray(x_float, delta_float):
     """
