@@ -4,7 +4,10 @@ from PIL import Image
 import pdqhash
 from image_utils import *
 
-PDQ_THRESHOLD = 20 # Represents hamming distance between PDQ hashes, change later
+PDQ_THRESHOLD = 35 # Represents hamming distance between PDQ hashes, change later
+NUM_ITERATIONS = 200 # Number of iterations our iterative algorithm works for
+EPS_MAX = 0.26 # Max L_inf allowed
+
 
 def project_linf(delta, eps):
     """Project delta (HxW) onto L∞ ball with radius eps (elementwise clamp)."""
@@ -51,6 +54,7 @@ def best_candidate_from_random(x, delta_cum, num_candidates=200, per_pixel_eps=0
         # create trial cumulative perturbation and limit it (so candidates don't exceed global budget by themselves)
         trial_delta = delta_cum + cand
         trial_delta = project_linf(trial_delta, per_pixel_eps*5)  # optionally cap intermediate values
+        trial_delta = project_l2(trial_delta, per_pixel_eps*5)  # optionally cap intermediate values
 
         # compute pdq distance between base_perturbed and base_perturbed + cand
         # note: pdq_distance_gray expects delta that when added to x produces perturbed image;
@@ -98,8 +102,9 @@ def iterative_greedy_attack(orig_rgb, x_small, its=50, M=200, eps_step=0.005, ep
         # project cumulative perturbation onto allowed L_inf ball so it stays imperceptible
         bar_delta = project_linf(bar_delta, eps_max)
 
+        #l2_max = 0.3
         # optionally also project L2 if you want:
-        # bar_delta = project_l2(bar_delta, l2_max)
+        #bar_delta = project_l2(bar_delta, l2_max)
 
         # compute pdq distance between x and x + bar_delta (for logging)
         dist_cum, sim_cum, qorig, qpert = pdq_distance_gray(x_small, bar_delta)
@@ -145,10 +150,10 @@ def process_image(path):
     # Run iterative greedy attack
     bar_delta, delta_rgb, perturbed_rgb, history = iterative_greedy_attack(
         orig_rgb, x,
-        its=100,
+        its=NUM_ITERATIONS,
         M=200,
         eps_step=0.005,
-        eps_max=0.1,
+        eps_max=EPS_MAX,
         candidate_type='gauss',
         threshold=PDQ_THRESHOLD
     )
@@ -186,6 +191,8 @@ def process_image(path):
 
     # PDQ final reporting between small x and small x+bar_delta
     dist_cum, sim_cum, qorig_cum, qpert_cum = pdq_distance_gray(x, bar_delta)
+    dist_full, sim_full, qorig_full, qpert_full = pdq_distance_rgb(
+            orig_rgb, perturbed_rgb)
 
     # Save naming summary (printed)
     print(f"\nProcessed {name}")
@@ -195,7 +202,8 @@ def process_image(path):
     print(f"  small stacked (L/R)   : {stacked_small_out}")
     print(f"  bar_delta visualization: {bd_out}")
     print(f"PDQ final (small): PDQdist={int(dist_cum)} PDQsim={sim_cum:.3f} Qorig={qorig_cum:.1f} Qpert={qpert_cum:.1f}")
-
+    print(f"PDQ final (original): PDQdist={int(dist_full)} PDQsim={sim_full:.3f} Qorig={qorig_full:.1f} Qpert={qpert_full:.1f}")
+    print(f"  Final L2 per pixel for original: {l2_per_pixel_rgb(perturbed_rgb - orig_rgb)}")
     # Optionally return paths & history
     return {
         "orig": orig_out,

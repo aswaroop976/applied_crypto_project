@@ -24,6 +24,11 @@ def lp_per_pixel(delta, p=2):
         return np.max(np.abs(delta))
     return (np.mean(np.abs(delta) ** p)) ** (1.0 / p)
 
+def l2_per_pixel_rgb(delta_rgb):
+    # delta_rgb: HxWx3 (float, same scale as your images, usually [0,1])
+    per_pix_sq = np.sum(delta_rgb**2, axis=2)      # HxW
+    return np.sqrt(np.mean(per_pix_sq))            # scalar
+
 def to_float(img):
     return np.asarray(img, dtype=np.float32) / 255.0
 
@@ -92,6 +97,30 @@ def pdq_distance_gray(x_float, delta_float):
     dist = pdq_hamming_distance(hv1, hv2)       # 0..256
     sim = (256 - dist) / 256.0
     return dist, sim, q1, q2
+
+def pdq_distance_rgb(a_float, b_float):
+    """
+    a_u8, b_u8: HxWx3 uint8 RGB
+    returns: (dist, sim, q_a, q_b) where dist is Hamming distance in [0..256], sim in [0..1]
+    """
+
+    img_a = _ensure_rgb_uint8(to_uint8(a_float))
+    img_b = _ensure_rgb_uint8(to_uint8(b_float))
+
+    h1, q1 = pdqhash.compute(img_a)  # h1: 256-bit hash (as bytes/bitset/np array depending on binding), q1: quality
+    h2, q2 = pdqhash.compute(img_b)
+
+    # Convert hashes to bit arrays if needed, then compute Hamming distance
+    # The binding may already give a numpy bool array of length 256; if it's bytes/str, adapt accordingly.
+    # Example assuming numpy boolean arrays:
+    import numpy as np
+    h1_bits = np.array(h1, dtype=np.bool_) if not isinstance(h1, np.ndarray) else h1.astype(np.bool_)
+    h2_bits = np.array(h2, dtype=np.bool_) if not isinstance(h2, np.ndarray) else h2.astype(np.bool_)
+
+    dist = int(np.count_nonzero(h1_bits ^ h2_bits))
+    sim = 1.0 - (dist / 256.0)
+
+    return dist, sim, float(q1), float(q2)
 
 # === IMPLEMENTATION OF ALGORITHM 3: InverseDelta ===
 
