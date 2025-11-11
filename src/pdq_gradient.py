@@ -204,6 +204,7 @@ def process_image(path):
     print(f"PDQ final (small): PDQdist={int(dist_cum)} PDQsim={sim_cum:.3f} Qorig={qorig_cum:.1f} Qpert={qpert_cum:.1f}")
     print(f"PDQ final (original): PDQdist={int(dist_full)} PDQsim={sim_full:.3f} Qorig={qorig_full:.1f} Qpert={qpert_full:.1f}")
     print(f"  Final L2 per pixel for original: {l2_per_pixel_rgb(perturbed_rgb - orig_rgb)}")
+    print(f"  Final L2 norm for original: {l2_norm_rgb(perturbed_rgb - orig_rgb)}")
     # Optionally return paths & history
     return {
         "orig": orig_out,

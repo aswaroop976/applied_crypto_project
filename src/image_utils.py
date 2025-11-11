@@ -29,6 +29,11 @@ def l2_per_pixel_rgb(delta_rgb):
     per_pix_sq = np.sum(delta_rgb**2, axis=2)      # HxW
     return np.sqrt(np.mean(per_pix_sq))            # scalar
 
+def l2_norm_rgb(delta_rgb):
+    # delta_rgb: HxWx3 (float, same scale as your images, usually [0,1])
+    per_pix_sq = np.sum(delta_rgb**2, axis=2)      # HxW
+    return np.sqrt(np.sum(per_pix_sq))            # scalar
+
 def to_float(img):
     return np.asarray(img, dtype=np.float32) / 255.0
 
