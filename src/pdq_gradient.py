@@ -71,54 +71,123 @@ def best_candidate_from_random(x, delta_cum, num_candidates=200, per_pixel_eps=0
             best_qpert = q2
 
     return best, best_dist, best_sim, best_qorig, best_qpert
-def iterative_greedy_attack(orig_rgb, x_small, its=50, M=200, eps_step=0.005, eps_max=0.05, candidate_type='gauss', threshold=20):
+def iterative_greedy_attack(
+    orig_rgb,
+    x_small,
+    its=50,
+    M=200,
+    eps_step=0.005,
+    eps_max=0.05,
+    candidate_type='gauss',
+    threshold=PDQ_THRESHOLD,
+    bar_delta_init=None,
+    history_init=None,
+    restart_idx=0,
+    max_restarts=3,
+):
     """
     Iteratively find and accumulate greedy perturbations in small grayscale space.
+
     - orig_rgb: original full-res RGB float HxWx3
-    - x_small: small grayscale image Hs x Ws (float)
-    - its: number of iterations
+    - x_small: small grayscale image Hs x Ws (float), this is the *original* base
+    - its: number of iterations for THIS run
     - M: number of candidates per iteration
-    - eps_step: nominal candidate std/step (per-pixel)
-    - eps_max: max L_inf allowed for cumulative bar_delta
-    Returns cumulative bar_delta and history of PDQ distances.
+    - eps_step: per-pixel step size / candidate scale
+    - eps_max: max L_inf allowed for cumulative bar_delta for THIS run
+    - threshold: target PDQ distance between x_small and x_small + bar_delta
+    - bar_delta_init: optional initial cumulative perturbation to continue from
+    - history_init: optional history from previous runs (list of (iter_idx, dist, sim))
+    - restart_idx: how many times we've already bumped eps_max
+    - max_restarts: maximum number of times we'll increase eps_max and continue
+
+    Returns: bar_delta, delta_rgb, perturbed_rgb, history
     """
     Hs, Ws = x_small.shape
-    bar_delta = np.zeros_like(x_small, dtype=np.float32)  # cumulative small-space perturbation
-    history = []
 
-    # initial PDQ between x and x (should be 0)
-    dist0, sim0, q0, q1 = pdq_distance_gray(x_small, np.zeros_like(x_small))
-    history.append((0, dist0, sim0))
+    # Start from previous perturbation if provided, else from zero
+    if bar_delta_init is None:
+        bar_delta = np.zeros_like(x_small, dtype=np.float32)
+    else:
+        bar_delta = bar_delta_init.astype(np.float32).copy()
 
-    for t in range(its):
-        # generate many small candidates and pick the one that increases PDQ most
+    # Continue history if given, otherwise start fresh
+    if history_init is None or len(history_init) == 0:
+        # compute initial PDQ distance between x_small and x_small + bar_delta (likely 0)
+        dist_cum, sim_cum, q0, q1 = pdq_distance_gray(x_small, bar_delta)
+        history = [(0, dist_cum, sim_cum)]
+        start_iter = 1
+    else:
+        history = list(history_init)
+        last_iter_idx, dist_cum, sim_cum = history[-1]
+        start_iter = last_iter_idx + 1
+
+    print(f"[restart {restart_idx}] eps_max being utilized: {eps_max}")
+
+    # Main iterative loop for THIS run
+    for step in range(its):
+        iter_idx = start_iter + step
+
+        # generate many small candidates around the *current* perturbed small image
         best_cand, best_dist, best_sim, qorig, qpert = best_candidate_from_random(
-            x_small, bar_delta, num_candidates=M, per_pixel_eps=eps_step, candidate_type=candidate_type
+            x_small,
+            bar_delta,
+            num_candidates=M,
+            per_pixel_eps=eps_step,
+            candidate_type=candidate_type,
         )
 
-        # update cumulative perturbation (add best candidate)
+        # accumulate perturbation
         bar_delta = bar_delta + best_cand
 
-        # project cumulative perturbation onto allowed L_inf ball so it stays imperceptible
+        # enforce current L_inf budget
         bar_delta = project_linf(bar_delta, eps_max)
+        # optionally also L2:
+        # bar_delta = project_l2(bar_delta, l2_max)
 
-        #l2_max = 0.3
-        # optionally also project L2 if you want:
-        #bar_delta = project_l2(bar_delta, l2_max)
-
-        # compute pdq distance between x and x + bar_delta (for logging)
+        # measure PDQ distance vs original small image x_small
         dist_cum, sim_cum, qorig, qpert = pdq_distance_gray(x_small, bar_delta)
-        history.append((t+1, dist_cum, sim_cum))
+        history.append((iter_idx, dist_cum, sim_cum))
 
-        # debug/log
-        #print(f"iter {t+1:3d}: best_candidate_dist={best_dist:3d} => cum_dist={dist_cum:3d} PDQsim={sim_cum:.3f} q={qorig:.1f}/{qpert:.1f}")
+        print(
+            f"iter {iter_idx:3d}: best_candidate_dist={best_dist:3d} "
+            f"=> cum_dist={dist_cum:3d} PDQsim={sim_cum:.3f} "
+            f"q={qorig:.1f}/{qpert:.1f}"
+        )
 
-        # stopping rule: if we exceed some PDQ distance threshold, break
-        if dist_cum >= threshold:   # example threshold, tune to your use-case
-            #print("Reached PDQ distance target; stopping early.")
+        if dist_cum >= threshold:
+            print("Reached PDQ distance target; stopping early.")
             break
 
-    # Produce final mapped RGB perturbation to apply to the original image
+    # If threshold not met, bump eps_max and CONTINUE from current bar_delta
+    if dist_cum < threshold and restart_idx < max_restarts:
+        new_eps_max = eps_max + 0.05
+        print(
+            f"Threshold not reached (dist_cum={dist_cum} < {threshold}). "
+            f"Increasing eps_max to {new_eps_max} and continuing attack "
+            f"(restart {restart_idx + 1})."
+        )
+        return iterative_greedy_attack(
+            orig_rgb,
+            x_small,                  # keep original base image
+            its=its,
+            M=M,
+            eps_step=eps_step,
+            eps_max=new_eps_max,
+            candidate_type=candidate_type,
+            threshold=threshold,
+            bar_delta_init=bar_delta,  # <-- continue from current cumulative delta
+            history_init=history,      # <-- keep the full history / logs
+            restart_idx=restart_idx + 1,
+            max_restarts=max_restarts,
+        )
+
+    if dist_cum < threshold:
+        print(
+            f"WARNING: Max restarts ({max_restarts}) reached, "
+            f"final PDQdist={dist_cum} still < threshold={threshold}."
+        )
+
+    # Produce final mapped RGB perturbation to apply to the original full-res image
     W_orig, H_orig = orig_rgb.shape[1], orig_rgb.shape[0]
     delta_gray_resized = resize_float_delta(bar_delta, (W_orig, H_orig))
     delta_rgb = inverse_delta_map(orig_rgb, delta_gray_resized)
@@ -149,13 +218,18 @@ def process_image(path):
     # Attack configuration (tune these)
     # Run iterative greedy attack
     bar_delta, delta_rgb, perturbed_rgb, history = iterative_greedy_attack(
-        orig_rgb, x,
+        orig_rgb=orig_rgb,
+        x_small=x,
         its=NUM_ITERATIONS,
         M=200,
         eps_step=0.005,
         eps_max=EPS_MAX,
         candidate_type='gauss',
-        threshold=PDQ_THRESHOLD
+        threshold=PDQ_THRESHOLD,
+        bar_delta_init=None,   # <-- start fresh
+        history_init=None,     # <-- start fresh
+        restart_idx=0,         # <-- first run
+        max_restarts=3         # <-- you can tune this
     )
 
     # Save outputs with clear filenames
