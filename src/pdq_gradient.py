@@ -4,9 +4,10 @@ from PIL import Image
 import pdqhash
 from image_utils import *
 
-PDQ_THRESHOLD = 35 # Represents hamming distance between PDQ hashes, change later
-NUM_ITERATIONS = 200 # Number of iterations our iterative algorithm works for
-EPS_MAX = 0.26 # Max L_inf allowed
+PDQ_THRESHOLD = 30 # Represents hamming distance between PDQ hashes, change later
+NUM_ITERATIONS = 30 # Number of iterations our iterative algorithm works for
+EPS_MAX = 0.07 # Max L_inf allowed
+L2_MAX = 10
 
 
 def project_linf(delta, eps):
@@ -20,6 +21,25 @@ def project_l2(delta, eps):
         return delta
     return (delta / norm) * eps
 
+def shrink_bar_delta_to_threshold(x_small, bar_delta, threshold, iters=10):
+    # assumes bar_delta currently achieves PDQdist >= threshold (in small space)
+    low, high = 0.0, 1.0
+    best_alpha = 1.0
+    
+    for _ in range(iters):
+        mid = 0.5 * (low + high)
+        test_delta = mid * bar_delta
+        dist, sim, q0, q1 = pdq_distance_gray(x_small, test_delta)
+        if dist >= threshold:
+            # still successful, can shrink more
+            best_alpha = mid
+            high = mid
+        else:
+            # too small, need more
+            low = mid
+
+    return best_alpha * bar_delta
+
 def best_candidate_from_random(x, delta_cum, num_candidates=200, per_pixel_eps=0.01, candidate_type='gauss'):
     """
     Generate candidates (small HxW perturbations), test pdq distance increase when added to current,
@@ -28,14 +48,15 @@ def best_candidate_from_random(x, delta_cum, num_candidates=200, per_pixel_eps=0
     - delta_cum: current cumulative perturbation (HxW floats, can be nonzero)
     - returns (best_candidate, best_dist, best_sim, best_qorig, best_qpert)
     """
+
+    base_perturbed = np.clip(x + delta_cum, 0.0, 1.0)  # current perturbed small image
     H, W = x.shape
-    best = None
-    best_dist = -1
+    best = delta_cum
+    # original distance before trying to find optimal gradient
+    best_dist, _, _, _ = pdq_distance_gray(x, delta_cum)
     best_sim = None
     best_qorig = None
     best_qpert = None
-
-    base_perturbed = np.clip(x + delta_cum, 0.0, 1.0)  # current perturbed small image
 
     for i in range(num_candidates):
         if candidate_type == 'gauss':
@@ -51,16 +72,12 @@ def best_candidate_from_random(x, delta_cum, num_candidates=200, per_pixel_eps=0
         else:
             raise ValueError("unknown candidate_type")
 
-        # create trial cumulative perturbation and limit it (so candidates don't exceed global budget by themselves)
-        trial_delta = delta_cum + cand
-        trial_delta = project_linf(trial_delta, per_pixel_eps*5)  # optionally cap intermediate values
-        trial_delta = project_l2(trial_delta, per_pixel_eps*5)  # optionally cap intermediate values
-
         # compute pdq distance between base_perturbed and base_perturbed + cand
         # note: pdq_distance_gray expects delta that when added to x produces perturbed image;
         # here we want distance between (x + delta_cum) and (x + delta_cum + cand),
         # so pass base_perturbed as reference by computing delta_rel = (delta_cum + cand) - delta_cum = cand
         dist, sim, q1, q2 = pdq_distance_gray(base_perturbed, cand)
+
 
         # choose the candidate that produced the largest PDQ distance
         if dist > best_dist:
@@ -141,8 +158,6 @@ def iterative_greedy_attack(
 
         # enforce current L_inf budget
         bar_delta = project_linf(bar_delta, eps_max)
-        # optionally also L2:
-        # bar_delta = project_l2(bar_delta, l2_max)
 
         # measure PDQ distance vs original small image x_small
         dist_cum, sim_cum, qorig, qpert = pdq_distance_gray(x_small, bar_delta)
@@ -160,7 +175,7 @@ def iterative_greedy_attack(
 
     # If threshold not met, bump eps_max and CONTINUE from current bar_delta
     if dist_cum < threshold and restart_idx < max_restarts:
-        new_eps_max = eps_max + 0.05
+        new_eps_max = eps_max + 0.03
         print(
             f"Threshold not reached (dist_cum={dist_cum} < {threshold}). "
             f"Increasing eps_max to {new_eps_max} and continuing attack "
@@ -187,6 +202,7 @@ def iterative_greedy_attack(
             f"final PDQdist={dist_cum} still < threshold={threshold}."
         )
 
+    bar_delta = shrink_bar_delta_to_threshold(x_small, bar_delta, PDQ_THRESHOLD)
     # Produce final mapped RGB perturbation to apply to the original full-res image
     W_orig, H_orig = orig_rgb.shape[1], orig_rgb.shape[0]
     delta_gray_resized = resize_float_delta(bar_delta, (W_orig, H_orig))
@@ -200,7 +216,7 @@ def process_image(path):
     Modified process_image that runs the iterative greedy attack on the image at `path`.
     Saves:
       - images_out/{name}__orig_fullRGB.png          : original full-res RGB (for reference)
-      - images_out/{name}__pert_resized_RGB.png      : final perturbed full-res RGB (mapped from small attack)
+      - images_out/{name}__pert_resized_RGB05,ng      : final perturbed full-res RGB (mapped from small attack)
       - images_out/{name}__pert_smallstack.png       : side-by-side small grayscale original vs small perturbed
       - images_out/{name}__bar_delta_small.png       : visualization of cumulative bar_delta (scaled for viewing)
     Prints PDQ and metrics to console.
@@ -221,7 +237,7 @@ def process_image(path):
         orig_rgb=orig_rgb,
         x_small=x,
         its=NUM_ITERATIONS,
-        M=200,
+        M=400,
         eps_step=0.005,
         eps_max=EPS_MAX,
         candidate_type='gauss',
@@ -229,7 +245,7 @@ def process_image(path):
         bar_delta_init=None,   # <-- start fresh
         history_init=None,     # <-- start fresh
         restart_idx=0,         # <-- first run
-        max_restarts=3         # <-- you can tune this
+        max_restarts=4         # <-- you can tune this
     )
 
     # Save outputs with clear filenames
@@ -243,25 +259,25 @@ def process_image(path):
     Image.fromarray(to_uint8(perturbed_rgb)).save(pert_resized_out)
 
     # small stacked: original small grayscale vs (x + bar_delta) small grayscale
-    x_pert_small = np.clip(x + bar_delta, 0.0, 1.0)
-    stacked_small = np.hstack([x, x_pert_small])
-    stacked_small_u8 = to_uint8(stacked_small)
-    stacked_small_img = Image.fromarray(stacked_small_u8, mode="L")
-    stacked_small_out = os.path.join(OUTPUT_DIR, f"{base}__pert_smallstack.png")
-    stacked_small_img.save(stacked_small_out)
+    #x_pert_small = np.clip(x + bar_delta, 0.0, 1.0)
+    #stacked_small = np.hstack([x, x_pert_small])
+    #stacked_small_u8 = to_uint8(stacked_small)
+    #stacked_small_img = Image.fromarray(stacked_small_u8, mode="L")
+    #stacked_small_out = os.path.join(OUTPUT_DIR, f"{base}__pert_smallstack.png")
+    #stacked_small_img.save(stacked_small_out)
 
     # save a visualization of bar_delta (scale to [0,1] for viewing)
     # We'll map bar_delta (which can be negative) to a viewable grayscale: (bar_delta - min) / (max - min)
-    bd = bar_delta
-    bd_min, bd_max = float(np.min(bd)), float(np.max(bd))
-    if bd_max - bd_min < 1e-8:
-        bd_vis = np.zeros_like(bd)
-    else:
-        bd_vis = (bd - bd_min) / (bd_max - bd_min)
-    bd_vis_u8 = to_uint8(bd_vis)
-    bd_img = Image.fromarray(bd_vis_u8, mode="L")
-    bd_out = os.path.join(OUTPUT_DIR, f"{base}__bar_delta_small.png")
-    bd_img.save(bd_out)
+    #bd = bar_delta
+    #bd_min, bd_max = float(np.min(bd)), float(np.max(bd))
+    #if bd_max - bd_min < 1e-8:
+    #    bd_vis = np.zeros_like(bd)
+    #else:
+    #    bd_vis = (bd - bd_min) / (bd_max - bd_min)
+    #bd_vis_u8 = to_uint8(bd_vis)
+    #bd_img = Image.fromarray(bd_vis_u8, mode="L")
+    #bd_out = os.path.join(OUTPUT_DIR, f"{base}__bar_delta_small.png")
+    #bd_img.save(bd_out)
 
     # PDQ final reporting between small x and small x+bar_delta
     dist_cum, sim_cum, qorig_cum, qpert_cum = pdq_distance_gray(x, bar_delta)
@@ -273,8 +289,8 @@ def process_image(path):
     print(f"Outputs saved to {OUTPUT_DIR}:")
     print(f"  original full-res     : {orig_out}")
     print(f"  perturbed full-res    : {pert_resized_out}")
-    print(f"  small stacked (L/R)   : {stacked_small_out}")
-    print(f"  bar_delta visualization: {bd_out}")
+    #print(f"  small stacked (L/R)   : {stacked_small_out}")
+    #print(f"  bar_delta visualization: {bd_out}")
     print(f"PDQ final (small): PDQdist={int(dist_cum)} PDQsim={sim_cum:.3f} Qorig={qorig_cum:.1f} Qpert={qpert_cum:.1f}")
     print(f"PDQ final (original): PDQdist={int(dist_full)} PDQsim={sim_full:.3f} Qorig={qorig_full:.1f} Qpert={qpert_full:.1f}")
     print(f"  Final L2 per pixel for original: {l2_per_pixel_rgb(perturbed_rgb - orig_rgb)}")
@@ -282,9 +298,9 @@ def process_image(path):
     # Optionally return paths & history
     return {
         "orig": orig_out,
-        "pert_resized": pert_resized_out,
-        "smallstack": stacked_small_out,
-        "bar_delta_vis": bd_out,
+        #"pert_resized": pert_resized_out,
+        #"smallstack": stacked_small_out,
+        #"bar_delta_vis": bd_out,
         "history": history
     }
 
