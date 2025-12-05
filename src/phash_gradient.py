@@ -1,7 +1,6 @@
 import os
 import numpy as np
 from PIL import Image
-import pdqhash
 from image_utils import *
 
 PHASH_THRESHOLD = 6 # Represents hamming distance between PDQ hashes, change later
