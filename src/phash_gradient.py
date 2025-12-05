@@ -4,8 +4,9 @@ from PIL import Image
 from image_utils import *
 
 PHASH_THRESHOLD = 6 # Represents hamming distance between PDQ hashes, change later
-NUM_ITERATIONS = 200 # Number of iterations our iterative algorithm works for
+NUM_ITERATIONS = 150 # Number of iterations our iterative algorithm works for
 EPS_MAX = 0.01 # Max L_inf allowed
+MAX_RESTARTS = 8 # Max amounts of restarts of iterative greedy attack allowed
 
 
 def project_linf(delta, eps):
@@ -134,7 +135,7 @@ def iterative_greedy_attack(orig_rgb, x_small, its=50, M=200, eps_step=0.005, ep
                 max_restarts=max_restarts
             )
         else:
-            new_eps_step = eps_step + 0.001
+            new_eps_step = eps_step + 0.002
             return iterative_greedy_attack(
                 orig_rgb,
                 x_small,
@@ -190,7 +191,7 @@ def process_image(path):
         bar_delta_init=None,
         history_init=None,
         restart_idx=0,
-        max_restarts=6
+        max_restarts=MAX_RESTARTS
     )
 
     # Save outputs with clear filenames
