@@ -30,7 +30,8 @@ def best_candidate_from_random(x, delta_cum, num_candidates=200, per_pixel_eps=0
     """
     H, W = x.shape
     best = delta_cum
-    best_dist, _ = phash_distance_gray(x, delta_cum)
+    #best_dist, _ = phash_distance_gray(x, delta_cum)
+    best_dist = 0
     best_sim = None
 
     base_perturbed = np.clip(x + delta_cum, 0.0, 1.0)  # current perturbed small image
@@ -118,20 +119,37 @@ def iterative_greedy_attack(orig_rgb, x_small, its=50, M=200, eps_step=0.005, ep
             f"Increasing eps_max to {new_eps_max} and continuing attack "
             f"(restart {restart_idx + 1})."
         )
-        return iterative_greedy_attack(
-            orig_rgb,
-            x_small,
-            its = its,
-            M=M,
-            eps_step=eps_step,
-            eps_max=new_eps_max,
-            candidate_type=candidate_type,
-            threshold=threshold,
-            bar_delta_init=bar_delta,
-            history_init=history,
-            restart_idx=restart_idx+1,
-            max_restarts=max_restarts
-        )
+        if restart_idx < 4:
+            return iterative_greedy_attack(
+                orig_rgb,
+                x_small,
+                its = its,
+                M=M,
+                eps_step=eps_step,
+                eps_max=new_eps_max,
+                candidate_type=candidate_type,
+                threshold=threshold,
+                bar_delta_init=bar_delta,
+                history_init=history,
+                restart_idx=restart_idx+1,
+                max_restarts=max_restarts
+            )
+        else:
+            new_eps_step = eps_step + 0.001
+            return iterative_greedy_attack(
+                orig_rgb,
+                x_small,
+                its = its,
+                M=M,
+                eps_step=new_eps_step,
+                eps_max=new_eps_max,
+                candidate_type=candidate_type,
+                threshold=threshold,
+                bar_delta_init=bar_delta,
+                history_init=history,
+                restart_idx=restart_idx+1,
+                max_restarts=max_restarts
+            )
     # Produce final mapped RGB perturbation to apply to the original image
     W_orig, H_orig = orig_rgb.shape[1], orig_rgb.shape[0]
     delta_gray_resized = resize_float_delta(bar_delta, (W_orig, H_orig))
@@ -165,7 +183,7 @@ def process_image(path):
     bar_delta, delta_rgb, perturbed_rgb, history = iterative_greedy_attack(
         orig_rgb, x,
         its=NUM_ITERATIONS,
-        M=200,
+        M=175,
         eps_step=0.005,
         eps_max=EPS_MAX,
         candidate_type='gauss',
@@ -173,7 +191,7 @@ def process_image(path):
         bar_delta_init=None,
         history_init=None,
         restart_idx=0,
-        max_restarts=4
+        max_restarts=6
     )
 
     # Save outputs with clear filenames

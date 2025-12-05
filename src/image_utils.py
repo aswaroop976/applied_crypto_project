@@ -4,7 +4,7 @@ from PIL import Image
 import pdqhash, imagehash
 
 # === CONFIGURATION ===
-INPUT_DIR = "images_in"
+INPUT_DIR = "../jpg/"
 OUTPUT_DIR = "images_out"
 RESIZE_TO = (64, 64)
 NOISE_STD = 0.03   # standard deviation of Gaussian noise (0–1 scale)
