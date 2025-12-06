@@ -53,7 +53,8 @@ def best_candidate_from_random(x, delta_cum, num_candidates=200, per_pixel_eps=0
     H, W = x.shape
     best = delta_cum
     # original distance before trying to find optimal gradient
-    best_dist, _, _, _ = pdq_distance_gray(x, delta_cum)
+    #best_dist, _, _, _ = pdq_distance_gray(x, delta_cum)
+    best_dist = 0
     best_sim = None
     best_qorig = None
     best_qpert = None
@@ -202,7 +203,7 @@ def iterative_greedy_attack(
             f"final PDQdist={dist_cum} still < threshold={threshold}."
         )
 
-    bar_delta = shrink_bar_delta_to_threshold(x_small, bar_delta, PDQ_THRESHOLD)
+    #bar_delta = shrink_bar_delta_to_threshold(x_small, bar_delta, PDQ_THRESHOLD)
     # Produce final mapped RGB perturbation to apply to the original full-res image
     W_orig, H_orig = orig_rgb.shape[1], orig_rgb.shape[0]
     delta_gray_resized = resize_float_delta(bar_delta, (W_orig, H_orig))
@@ -245,7 +246,7 @@ def process_image(path):
         bar_delta_init=None,   # <-- start fresh
         history_init=None,     # <-- start fresh
         restart_idx=0,         # <-- first run
-        max_restarts=4         # <-- you can tune this
+        max_restarts=8         # <-- you can tune this
     )
 
     # Save outputs with clear filenames
