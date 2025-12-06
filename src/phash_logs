@@ -15076,3 +15076,749 @@ Outputs saved to images_out:
   perturbed full-res    : images_out/image_00758__pert_resized_RGB.png
 Phash final (small): Phashdist=2 Phashsim=0.969 
 Phash final (original): Phashdist=2 Phashsim=0.969
+  Final L2 per pixel for original: 0.009473876096308231
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_03555.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_03555__orig_fullRGB.png
+  perturbed full-res    : images_out/image_03555__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=2 Phashsim=0.969
+  Final L2 per pixel for original: 0.009498728439211845
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_01243.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_01243__orig_fullRGB.png
+  perturbed full-res    : images_out/image_01243__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.008805450052022934
+[restart 0] eps_max being utilized: 0.01
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.03 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.03
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.05 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.05
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.07 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.09000000000000001 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.09000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.11000000000000001 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.11000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.13 and continuing attack (restart 6).
+[restart 6] eps_max being utilized: 0.13
+
+Processed image_00485.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_00485__orig_fullRGB.png
+  perturbed full-res    : images_out/image_00485__pert_resized_RGB.png
+Phash final (small): Phashdist=0 Phashsim=1.000 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.007199640851467848
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_05989.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_05989__orig_fullRGB.png
+  perturbed full-res    : images_out/image_05989__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.008631626144051552
+[restart 0] eps_max being utilized: 0.01
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.03 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.03
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.05 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.05
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.07 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.09000000000000001 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.09000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.11000000000000001 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.11000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.13 and continuing attack (restart 6).
+[restart 6] eps_max being utilized: 0.13
+
+Processed image_02523.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_02523__orig_fullRGB.png
+  perturbed full-res    : images_out/image_02523__pert_resized_RGB.png
+Phash final (small): Phashdist=0 Phashsim=1.000 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.007142381742596626
+[restart 0] eps_max being utilized: 0.01
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.03 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.03
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.05 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.05
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.07 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.09000000000000001 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.09000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.11000000000000001 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.11000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.13 and continuing attack (restart 6).
+[restart 6] eps_max being utilized: 0.13
+
+Processed image_07427.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_07427__orig_fullRGB.png
+  perturbed full-res    : images_out/image_07427__pert_resized_RGB.png
+Phash final (small): Phashdist=0 Phashsim=1.000 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.007007316220551729
+[restart 0] eps_max being utilized: 0.01
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.03 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.03
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.05 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.05
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.07 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.09000000000000001 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.09000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.11000000000000001 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.11000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.13 and continuing attack (restart 6).
+[restart 6] eps_max being utilized: 0.13
+
+Processed image_05083.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_05083__orig_fullRGB.png
+  perturbed full-res    : images_out/image_05083__pert_resized_RGB.png
+Phash final (small): Phashdist=0 Phashsim=1.000 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.007059583906084299
+[restart 0] eps_max being utilized: 0.01
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.03 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.03
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.05 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.05
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.07 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.09000000000000001 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.09000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.11000000000000001 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.11000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.13 and continuing attack (restart 6).
+[restart 6] eps_max being utilized: 0.13
+
+Processed image_06677.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_06677__orig_fullRGB.png
+  perturbed full-res    : images_out/image_06677__pert_resized_RGB.png
+Phash final (small): Phashdist=0 Phashsim=1.000 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.006993953604251146
+[restart 0] eps_max being utilized: 0.01
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.03 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.03
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.05 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.05
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.07 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.09000000000000001 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.09000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.11000000000000001 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.11000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.13 and continuing attack (restart 6).
+[restart 6] eps_max being utilized: 0.13
+
+Processed image_01448.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_01448__orig_fullRGB.png
+  perturbed full-res    : images_out/image_01448__pert_resized_RGB.png
+Phash final (small): Phashdist=0 Phashsim=1.000 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.006853986531496048
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_07291.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_07291__orig_fullRGB.png
+  perturbed full-res    : images_out/image_07291__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.008554600179195404
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_02331.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_02331__orig_fullRGB.png
+  perturbed full-res    : images_out/image_02331__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.00885484367609024
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_06033.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_06033__orig_fullRGB.png
+  perturbed full-res    : images_out/image_06033__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.008674846962094307
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_04354.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_04354__orig_fullRGB.png
+  perturbed full-res    : images_out/image_04354__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.008362793363630772
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_00240.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_00240__orig_fullRGB.png
+  perturbed full-res    : images_out/image_00240__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.011352990753948689
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_05138.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_05138__orig_fullRGB.png
+  perturbed full-res    : images_out/image_05138__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=2 Phashsim=0.969
+  Final L2 per pixel for original: 0.010381230153143406
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_00245.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_00245__orig_fullRGB.png
+  perturbed full-res    : images_out/image_00245__pert_resized_RGB.png
+Phash final (small): Phashdist=4 Phashsim=0.938 
+Phash final (original): Phashdist=2 Phashsim=0.969
+  Final L2 per pixel for original: 0.00870527233928442
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_06154.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_06154__orig_fullRGB.png
+  perturbed full-res    : images_out/image_06154__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=2 Phashsim=0.969
+  Final L2 per pixel for original: 0.008420728147029877
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_08079.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_08079__orig_fullRGB.png
+  perturbed full-res    : images_out/image_08079__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=2 Phashsim=0.969
+  Final L2 per pixel for original: 0.010062835179269314
+[restart 0] eps_max being utilized: 0.01
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.03 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.03
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.05 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.05
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.07 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.09000000000000001 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.09000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.11000000000000001 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.11000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.13 and continuing attack (restart 6).
+[restart 6] eps_max being utilized: 0.13
+
+Processed image_06693.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_06693__orig_fullRGB.png
+  perturbed full-res    : images_out/image_06693__pert_resized_RGB.png
+Phash final (small): Phashdist=0 Phashsim=1.000 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.006883549969643354
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_07470.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_07470__orig_fullRGB.png
+  perturbed full-res    : images_out/image_07470__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=2 Phashsim=0.969
+  Final L2 per pixel for original: 0.008674431592226028
+[restart 0] eps_max being utilized: 0.01
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.03 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.03
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.05 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.05
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.07 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.09000000000000001 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.09000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.11000000000000001 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.11000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.13 and continuing attack (restart 6).
+[restart 6] eps_max being utilized: 0.13
+
+Processed image_04567.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_04567__orig_fullRGB.png
+  perturbed full-res    : images_out/image_04567__pert_resized_RGB.png
+Phash final (small): Phashdist=0 Phashsim=1.000 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.006962690502405167
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_06505.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_06505__orig_fullRGB.png
+  perturbed full-res    : images_out/image_06505__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=2 Phashsim=0.969
+  Final L2 per pixel for original: 0.010355198755860329
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_08149.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_08149__orig_fullRGB.png
+  perturbed full-res    : images_out/image_08149__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.008764303289353848
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_03733.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_03733__orig_fullRGB.png
+  perturbed full-res    : images_out/image_03733__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=2 Phashsim=0.969
+  Final L2 per pixel for original: 0.010975182987749577
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_05046.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_05046__orig_fullRGB.png
+  perturbed full-res    : images_out/image_05046__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=2 Phashsim=0.969
+  Final L2 per pixel for original: 0.008928156457841396
+[restart 0] eps_max being utilized: 0.01
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.03 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.03
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.05 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.05
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.07 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.09000000000000001 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.09000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.11000000000000001 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.11000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.13 and continuing attack (restart 6).
+[restart 6] eps_max being utilized: 0.13
+
+Processed image_04081.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_04081__orig_fullRGB.png
+  perturbed full-res    : images_out/image_04081__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.01068079937249422
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_08167.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_08167__orig_fullRGB.png
+  perturbed full-res    : images_out/image_08167__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=2 Phashsim=0.969
+  Final L2 per pixel for original: 0.008504707366228104
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_04500.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_04500__orig_fullRGB.png
+  perturbed full-res    : images_out/image_04500__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.011878457851707935
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_06630.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_06630__orig_fullRGB.png
+  perturbed full-res    : images_out/image_06630__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=2 Phashsim=0.969
+  Final L2 per pixel for original: 0.00909238588064909
+[restart 0] eps_max being utilized: 0.01
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.03 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.03
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.05 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.05
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.07 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.09000000000000001 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.09000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.11000000000000001 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.11000000000000001
+
+Processed image_01423.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_01423__orig_fullRGB.png
+  perturbed full-res    : images_out/image_01423__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.009644224308431149
+[restart 0] eps_max being utilized: 0.01
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.03 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.03
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.05 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.05
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.07 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.09000000000000001 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.09000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.11000000000000001 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.11000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.13 and continuing attack (restart 6).
+[restart 6] eps_max being utilized: 0.13
+
+Processed image_06734.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_06734__orig_fullRGB.png
+  perturbed full-res    : images_out/image_06734__pert_resized_RGB.png
+Phash final (small): Phashdist=0 Phashsim=1.000 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.007164712063968182
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_05758.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_05758__orig_fullRGB.png
+  perturbed full-res    : images_out/image_05758__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=2 Phashsim=0.969
+  Final L2 per pixel for original: 0.009180187247693539
+[restart 0] eps_max being utilized: 0.01
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.03 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.03
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.05 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.05
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.07 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.09000000000000001 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.09000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.11000000000000001 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.11000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.13 and continuing attack (restart 6).
+[restart 6] eps_max being utilized: 0.13
+
+Processed image_06640.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_06640__orig_fullRGB.png
+  perturbed full-res    : images_out/image_06640__pert_resized_RGB.png
+Phash final (small): Phashdist=0 Phashsim=1.000 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.007057415321469307
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_01246.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_01246__orig_fullRGB.png
+  perturbed full-res    : images_out/image_01246__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.009167988784611225
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_00855.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_00855__orig_fullRGB.png
+  perturbed full-res    : images_out/image_00855__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=2 Phashsim=0.969
+  Final L2 per pixel for original: 0.008513787761330605
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_04442.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_04442__orig_fullRGB.png
+  perturbed full-res    : images_out/image_04442__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=2 Phashsim=0.969
+  Final L2 per pixel for original: 0.00944041833281517
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_03973.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_03973__orig_fullRGB.png
+  perturbed full-res    : images_out/image_03973__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.008827206678688526
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_02376.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_02376__orig_fullRGB.png
+  perturbed full-res    : images_out/image_02376__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=2 Phashsim=0.969
+  Final L2 per pixel for original: 0.009101895615458488
+[restart 0] eps_max being utilized: 0.01
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.03 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.03
+
+Processed image_05928.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_05928__orig_fullRGB.png
+  perturbed full-res    : images_out/image_05928__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.009269224479794502
+[restart 0] eps_max being utilized: 0.01
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.03 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.03
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.05 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.05
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.07 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.07
+
+Processed image_08075.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_08075__orig_fullRGB.png
+  perturbed full-res    : images_out/image_08075__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.008832518011331558
+[restart 0] eps_max being utilized: 0.01
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.03 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.03
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.05 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.05
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.07 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.09000000000000001 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.09000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.11000000000000001 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.11000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.13 and continuing attack (restart 6).
+[restart 6] eps_max being utilized: 0.13
+
+Processed image_07110.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_07110__orig_fullRGB.png
+  perturbed full-res    : images_out/image_07110__pert_resized_RGB.png
+Phash final (small): Phashdist=0 Phashsim=1.000 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.006928704213351011
+[restart 0] eps_max being utilized: 0.01
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.03 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.03
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.05 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.05
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.07 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.09000000000000001 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.09000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.11000000000000001 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.11000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.13 and continuing attack (restart 6).
+[restart 6] eps_max being utilized: 0.13
+
+Processed image_00411.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_00411__orig_fullRGB.png
+  perturbed full-res    : images_out/image_00411__pert_resized_RGB.png
+Phash final (small): Phashdist=0 Phashsim=1.000 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.007344298996031284
+[restart 0] eps_max being utilized: 0.01
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.03 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.03
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.05 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.05
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.07 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.09000000000000001 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.09000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.11000000000000001 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.11000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.13 and continuing attack (restart 6).
+[restart 6] eps_max being utilized: 0.13
+
+Processed image_00808.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_00808__orig_fullRGB.png
+  perturbed full-res    : images_out/image_00808__pert_resized_RGB.png
+Phash final (small): Phashdist=0 Phashsim=1.000 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.007482064887881279
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_00801.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_00801__orig_fullRGB.png
+  perturbed full-res    : images_out/image_00801__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.008425065316259861
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_00212.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_00212__orig_fullRGB.png
+  perturbed full-res    : images_out/image_00212__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=2 Phashsim=0.969
+  Final L2 per pixel for original: 0.0086338697001338
+[restart 0] eps_max being utilized: 0.01
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.03 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.03
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.05 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.05
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.07 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.09000000000000001 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.09000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.11000000000000001 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.11000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.13 and continuing attack (restart 6).
+[restart 6] eps_max being utilized: 0.13
+
+Processed image_07395.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_07395__orig_fullRGB.png
+  perturbed full-res    : images_out/image_07395__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.01088668592274189
+[restart 0] eps_max being utilized: 0.01
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.03 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.03
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.05 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.05
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.07 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.09000000000000001 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.09000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.11000000000000001 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.11000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.13 and continuing attack (restart 6).
+[restart 6] eps_max being utilized: 0.13
+
+Processed image_00412.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_00412__orig_fullRGB.png
+  perturbed full-res    : images_out/image_00412__pert_resized_RGB.png
+Phash final (small): Phashdist=0 Phashsim=1.000 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.007138872053474188
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_06130.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_06130__orig_fullRGB.png
+  perturbed full-res    : images_out/image_06130__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=2 Phashsim=0.969
+  Final L2 per pixel for original: 0.008408869616687298
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_03484.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_03484__orig_fullRGB.png
+  perturbed full-res    : images_out/image_03484__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=2 Phashsim=0.969
+  Final L2 per pixel for original: 0.008675660006701946
+[restart 0] eps_max being utilized: 0.01
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.03 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.03
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.05 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.05
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.07 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.09000000000000001 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.09000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.11000000000000001 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.11000000000000001
+
+Processed image_07862.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_07862__orig_fullRGB.png
+  perturbed full-res    : images_out/image_07862__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.009986300021409988
+[restart 0] eps_max being utilized: 0.01
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.03 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.03
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.05 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.05
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.07 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.09000000000000001 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.09000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.11000000000000001 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.11000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.13 and continuing attack (restart 6).
+[restart 6] eps_max being utilized: 0.13
+
+Processed image_06791.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_06791__orig_fullRGB.png
+  perturbed full-res    : images_out/image_06791__pert_resized_RGB.png
+Phash final (small): Phashdist=0 Phashsim=1.000 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.007480954751372337
+[restart 0] eps_max being utilized: 0.01
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.03 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.03
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.05 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.05
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.07 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.09000000000000001 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.09000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.11000000000000001 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.11000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.13 and continuing attack (restart 6).
+[restart 6] eps_max being utilized: 0.13
+
+Processed image_08171.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_08171__orig_fullRGB.png
+  perturbed full-res    : images_out/image_08171__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=2 Phashsim=0.969
+  Final L2 per pixel for original: 0.010553312487900257
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_00179.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_00179__orig_fullRGB.png
+  perturbed full-res    : images_out/image_00179__pert_resized_RGB.png
+Phash final (small): Phashdist=2 Phashsim=0.969 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.008545398712158203
+[restart 0] eps_max being utilized: 0.01
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.03 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.03
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.05 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.05
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.07 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.09000000000000001 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.09000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.11000000000000001 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.11000000000000001
+Threshold not reached (dist_cum=0 < 2). Increasing eps_max to 0.13 and continuing attack (restart 6).
+[restart 6] eps_max being utilized: 0.13
+
+Processed image_02133.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_02133__orig_fullRGB.png
+  perturbed full-res    : images_out/image_02133__pert_resized_RGB.png
+Phash final (small): Phashdist=0 Phashsim=1.000 
+Phash final (original): Phashdist=0 Phashsim=1.000
+  Final L2 per pixel for original: 0.006858580280095339
+[restart 0] eps_max being utilized: 0.01
+
+Processed image_05670.jpg

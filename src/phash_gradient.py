@@ -3,7 +3,7 @@ import numpy as np
 from PIL import Image
 from image_utils import *
 
-PHASH_THRESHOLD = 6 # Represents hamming distance between PDQ hashes, change later
+PHASH_THRESHOLD = 2 # Represents hamming distance between PDQ hashes, change later
 NUM_ITERATIONS = 150 # Number of iterations our iterative algorithm works for
 EPS_MAX = 0.01 # Max L_inf allowed
 MAX_RESTARTS = 8 # Max amounts of restarts of iterative greedy attack allowed
