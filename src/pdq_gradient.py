@@ -5,9 +5,9 @@ import pdqhash
 from image_utils import *
 
 PDQ_THRESHOLD = 30 # Represents hamming distance between PDQ hashes, change later
-NUM_ITERATIONS = 30 # Number of iterations our iterative algorithm works for
+NUM_ITERATIONS = 100 # Number of iterations our iterative algorithm works for
 EPS_MAX = 0.07 # Max L_inf allowed
-L2_MAX = 10
+MAX_RESTARTS = 9 # Max amounts of restarts of iterative greedy attack allowed
 
 
 def project_linf(delta, eps):
@@ -164,11 +164,11 @@ def iterative_greedy_attack(
         dist_cum, sim_cum, qorig, qpert = pdq_distance_gray(x_small, bar_delta)
         history.append((iter_idx, dist_cum, sim_cum))
 
-        print(
-            f"iter {iter_idx:3d}: best_candidate_dist={best_dist:3d} "
-            f"=> cum_dist={dist_cum:3d} PDQsim={sim_cum:.3f} "
-            f"q={qorig:.1f}/{qpert:.1f}"
-        )
+        #print(
+        #    f"iter {iter_idx:3d}: best_candidate_dist={best_dist:3d} "
+        #    f"=> cum_dist={dist_cum:3d} PDQsim={sim_cum:.3f} "
+        #    f"q={qorig:.1f}/{qpert:.1f}"
+        #)
 
         if dist_cum >= threshold:
             print("Reached PDQ distance target; stopping early.")
@@ -246,7 +246,7 @@ def process_image(path):
         bar_delta_init=None,   # <-- start fresh
         history_init=None,     # <-- start fresh
         restart_idx=0,         # <-- first run
-        max_restarts=8         # <-- you can tune this
+        max_restarts=MAX_RESTARTS         # <-- you can tune this
     )
 
     # Save outputs with clear filenames

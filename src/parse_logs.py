@@ -88,11 +88,11 @@ def main():
 
     print(f"Total images parsed: {total_images}")
     print(f"Successful attacks (pHashdist == 2): {len(success_l2s)}")
-    print("L2 per pixel for successful attacks:")
-    for v in success_l2s:
-        print(f"  {v:.10f}")
+    #print("L2 per pixel for successful attacks:")
+    #for v in success_l2s:
+    #    print(f"  {v:.10f}")
 
-    plot_cdf(success_l2s, title="pHash continuous, T = 2")
+    plot_cdf(success_l2s, title="pHash, T = 2")
 
 
 if __name__ == "__main__":
