@@ -32,7 +32,7 @@ def generate_dct_and_phash(image_path: str):
         return None, None
 
     # 1. Load, Resize to 32x32, and Greyscale
-    # LANCZOS resampling maintains sharp details during downscaling.
+    # using Lanczos downsampling
     try:
         img = Image.open(image_path).convert('L').resize((32, 32), Image.Resampling.LANCZOS)
     except Exception as e:
@@ -41,8 +41,7 @@ def generate_dct_and_phash(image_path: str):
         
     image_array = np.array(img, dtype=float)
 
-    # **CRITICAL FIX: Subtract 128.0 to center the data around zero.**
-    # This ensures the AC coefficients are not skewed negative by the large DC term.
+    # center data around 128 for averaging/binary stuff to work
     centered_array = image_array - 128.0 
 
     # 2. Apply the 32x32 DCT
@@ -56,26 +55,23 @@ def generate_dct_and_phash(image_path: str):
     print(f"\n--- Results for {os.path.basename(image_path)} ---")
     print("\n## 32x32 Full DCT Matrix (Floating Point):")
     print(dct_matrix_32x32)
-    # Show key diagnostics from the new matrix
-    print(f"  DC Term C(0,0) is now much smaller: {dct_matrix_32x32[0, 0]:.2f}")
+    # Diagonostics
     
-    print("\n## 8x8 pHash Binary Matrix (Corrected):")
+    
+    print("\n## 8x8 pHash Binary Matrix:")
     print(binary_matrix_8x8)
     
     return dct_matrix_32x32, binary_matrix_8x8
 
+#usage (not used in current setup)
 if __name__ == "__main__":
-    # Use the specified image file. Ensure 'testimage.jpeg' exists!
-    SOURCE_IMAGE = "IMG_5718.jpeg"
+        OURCE_IMAGE = "IMG_5718.jpeg"
+        source_dct, source_phash = generate_dct_and_phash(SOURCE_IMAGE)
+        print(source_dct)
     
-    # Note: If 'testimage.jpeg' doesn't exist, create a sample image for testing.
-    
-    source_dct, source_phash = generate_dct_and_phash(SOURCE_IMAGE)
-    #print(source_dct)
-    
-    if source_dct is not None:
-        print("\n--- Diagnostics ---")
-        C_8x8 = source_dct[0:8, 0:8]
-        C_flat_no_DC = C_8x8.flatten()[1:]
-        print(f"New Mean (Threshold) of 63 coefficients: {np.mean(C_flat_no_DC):.2f}")
-        print(f"Range of 63 coefficients: [{np.min(C_flat_no_DC):.2f}, {np.max(C_flat_no_DC):.2f}]")
+        if source_dct is not None:
+            print("\n--- Diagnostics ---")
+            C_8x8 = source_dct[0:8, 0:8]
+            C_flat_no_DC = C_8x8.flatten()[1:]
+            print(f"New Mean (Threshold) of 63 coefficients: {np.mean(C_flat_no_DC):.2f}")
+            print(f"Range of 63 coefficients: [{np.min(C_flat_no_DC):.2f}, {np.max(C_flat_no_DC):.2f}]")
