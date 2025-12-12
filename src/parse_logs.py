@@ -6,35 +6,42 @@ from typing import List, Tuple
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Regex to capture per-image block:
+# Regex to capture per-image block for pHash logs:
 # - image name
 # - pHash distance (small)
 # - pHash distance (original)
 # - L2 per pixel
-BLOCK_RE = re.compile(
+PHASH_BLOCK_RE = re.compile(
     r"""
     Processed\s+(?P<name>\S+)\s+.*?          # image name
     Phash\ final\s+\(small\):\s+Phashdist=(?P<small>\d+).*?
     Phash\ final\s+\(original\):\s+Phashdist=(?P<orig>\d+).*?
-    Final\ L2\ per\ pixel\ for\ original:\s+(?P<l2>[0-9.]+)
+    Final\ L2\ per\ pixel\ for\ original:\s+(?P<l2>[0-9.eE+-]+)
+    """,
+    re.S | re.VERBOSE,
+)
+
+# Regex to capture per-image block for PDQ logs:
+# - image name
+# - PDQ distance (small)
+# - PDQ distance (original)
+# - L2 per pixel
+PDQ_BLOCK_RE = re.compile(
+    r"""
+    Processed\s+(?P<name>\S+)\s+.*?          # image name
+    PDQ\ final\s+\(small\):\s+PDQdist=(?P<small>\d+).*?
+    PDQ\ final\s+\(original\):\s+PDQdist=(?P<orig>\d+).*?
+    Final\ L2\ per\ pixel\ for\ original:\s+(?P<l2>[0-9.eE+-]+)
     """,
     re.S | re.VERBOSE,
 )
 
 
-def parse_log(text: str) -> Tuple[int, List[float]]:
-    """
-    Parse the full log text.
-
-    Returns:
-        total_images: number of images parsed
-        success_l2s: list of L2 per pixel values where
-                     pHash distance == 2 for either small or original.
-    """
+def parse_phash_log(text: str) -> Tuple[int, List[float]]:
     total_images = 0
     success_l2s: List[float] = []
 
-    for m in BLOCK_RE.finditer(text):
+    for m in PHASH_BLOCK_RE.finditer(text):
         total_images += 1
         small_dist = int(m.group("small"))
         orig_dist = int(m.group("orig"))
@@ -47,10 +54,29 @@ def parse_log(text: str) -> Tuple[int, List[float]]:
     return total_images, success_l2s
 
 
-def plot_cdf(l2_values: List[float], title: str = "pHash, T = 2") -> None:
-    """
-    Plot the empirical CDF of the given L2 per pixel values.
-    """
+def parse_pdq_log(
+    text: str, threshold: int = 30
+) -> Tuple[int, List[float], List[Tuple[str, int, int, float]]]:
+    total_images = 0
+    success_l2s: List[float] = []
+    success_meta: List[Tuple[str, int, int, float]] = []
+
+    for m in PDQ_BLOCK_RE.finditer(text):
+        total_images += 1
+        name = m.group("name")
+        small_dist = int(m.group("small"))
+        orig_dist = int(m.group("orig"))
+        l2 = float(m.group("l2"))
+
+        # Successful if either PDQ distance hits or exceeds the threshold
+        if small_dist >= threshold or orig_dist >= threshold:
+            success_l2s.append(l2)
+            success_meta.append((name, small_dist, orig_dist, l2))
+
+    return total_images, success_l2s, success_meta
+
+
+def plot_cdf(l2_values: List[float], title: str, outfile: str) -> None:
     if not l2_values:
         print("No successful attacks to plot.")
         return
@@ -71,8 +97,8 @@ def plot_cdf(l2_values: List[float], title: str = "pHash, T = 2") -> None:
     plt.grid(True, linestyle="--", alpha=0.5)
     plt.tight_layout()
 
-    # Show on screen; replace with savefig(...) if you prefer saving
-    plt.savefig("phash_T2_cdf.png", dpi=300)
+    plt.savefig(outfile, dpi=300)
+    print(f"SAVED: {outfile}")
 
 
 def main():
@@ -84,15 +110,32 @@ def main():
     with open(log_path, "r", encoding="utf-8") as f:
         text = f.read()
 
-    total_images, success_l2s = parse_log(text)
+    # Heuristic: decide whether this is a pHash log or a PDQ log
+    if "PDQ final (small)" in text:
+        # --- PDQ MODE ---
+        threshold = 30
+        total_images, success_l2s, success_meta = parse_pdq_log(text, threshold=threshold)
 
-    print(f"Total images parsed: {total_images}")
-    print(f"Successful attacks (pHashdist == 2): {len(success_l2s)}")
-    #print("L2 per pixel for successful attacks:")
-    #for v in success_l2s:
-    #    print(f"  {v:.10f}")
+        print(f"[PDQ] Total images parsed: {total_images}")
+        print(f"[PDQ] Successful attacks (PDQdist >= {threshold} in small/original): {len(success_l2s)}")
+        #print()
+        #print("Successful PDQ images:")
+        #for name, small_dist, orig_dist, l2 in success_meta:
+        #    print(
+        #        f"  {name}: PDQdist_small={small_dist}, "
+        #        f"PDQdist_orig={orig_dist}, L2_per_pixel={l2:.10f}"
+        #    )
 
-    plot_cdf(success_l2s, title="pHash, T = 2")
+        plot_cdf(success_l2s, title=f"PDQ, T = {threshold}", outfile="pdq_T30_cdf.png")
+
+    else:
+        # --- PHASH MODE (original behavior) ---
+        total_images, success_l2s = parse_phash_log(text)
+
+        print(f"[pHash] Total images parsed: {total_images}")
+        print(f"[pHash] Successful attacks (pHashdist == 2): {len(success_l2s)}")
+
+        plot_cdf(success_l2s, title="pHash, T = 2", outfile="phash_T2_cdf.png")
 
 
 if __name__ == "__main__":

@@ -1,7 +1,7 @@
 [restart 0] eps_max being utilized: 0.07
-Threshold not reached (dist_cum=12 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
+Threshold not reached (dist_cum=16 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
 [restart 1] eps_max being utilized: 0.1
-Threshold not reached (dist_cum=18 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
+Threshold not reached (dist_cum=22 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
 [restart 2] eps_max being utilized: 0.13
 Threshold not reached (dist_cum=26 < 30). Increasing eps_max to 0.16 and continuing attack (restart 3).
 [restart 3] eps_max being utilized: 0.16
@@ -12,22 +12,26 @@ Outputs saved to images_out:
   original full-res     : images_out/image_08032__orig_fullRGB.png
   perturbed full-res    : images_out/image_08032__pert_resized_RGB.png
 PDQ final (small): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
-PDQ final (original): PDQdist=34 PDQsim=0.867 Qorig=100.0 Qpert=100.0
-  Final L2 per pixel for original: 0.09522359818220139
-  Final L2 norm for original: 56.2947883605957
+PDQ final (original): PDQdist=28 PDQsim=0.891 Qorig=100.0 Qpert=100.0
+  Final L2 per pixel for original: 0.08814399689435959
+  Final L2 norm for original: 52.109432220458984
 [restart 0] eps_max being utilized: 0.07
 Threshold not reached (dist_cum=10 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
 [restart 1] eps_max being utilized: 0.1
-Threshold not reached (dist_cum=16 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
+Threshold not reached (dist_cum=10 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
 [restart 2] eps_max being utilized: 0.13
-Threshold not reached (dist_cum=20 < 30). Increasing eps_max to 0.16 and continuing attack (restart 3).
+Threshold not reached (dist_cum=16 < 30). Increasing eps_max to 0.16 and continuing attack (restart 3).
 [restart 3] eps_max being utilized: 0.16
-Threshold not reached (dist_cum=20 < 30). Increasing eps_max to 0.19 and continuing attack (restart 4).
+Threshold not reached (dist_cum=16 < 30). Increasing eps_max to 0.19 and continuing attack (restart 4).
 [restart 4] eps_max being utilized: 0.19
-Threshold not reached (dist_cum=18 < 30). Increasing eps_max to 0.22 and continuing attack (restart 5).
+Threshold not reached (dist_cum=10 < 30). Increasing eps_max to 0.22 and continuing attack (restart 5).
 [restart 5] eps_max being utilized: 0.22
-Threshold not reached (dist_cum=24 < 30). Increasing eps_max to 0.25 and continuing attack (restart 6).
+Threshold not reached (dist_cum=20 < 30). Increasing eps_max to 0.25 and continuing attack (restart 6).
 [restart 6] eps_max being utilized: 0.25
+Threshold not reached (dist_cum=22 < 30). Increasing eps_max to 0.28 and continuing attack (restart 7).
+[restart 7] eps_max being utilized: 0.28
+Threshold not reached (dist_cum=18 < 30). Increasing eps_max to 0.31000000000000005 and continuing attack (restart 8).
+[restart 8] eps_max being utilized: 0.31000000000000005
 Reached PDQ distance target; stopping early.
 
 Processed image_03340.jpg
@@ -36,172 +40,8 @@ Outputs saved to images_out:
   perturbed full-res    : images_out/image_03340__pert_resized_RGB.png
 PDQ final (small): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
 PDQ final (original): PDQdist=24 PDQsim=0.906 Qorig=100.0 Qpert=100.0
-  Final L2 per pixel for original: 0.0933365523815155
-  Final L2 norm for original: 52.551048278808594
-[restart 0] eps_max being utilized: 0.07
-Threshold not reached (dist_cum=6 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
-[restart 1] eps_max being utilized: 0.1
-Threshold not reached (dist_cum=8 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
-[restart 2] eps_max being utilized: 0.13
-Threshold not reached (dist_cum=8 < 30). Increasing eps_max to 0.16 and continuing attack (restart 3).
-[restart 3] eps_max being utilized: 0.16
-Threshold not reached (dist_cum=16 < 30). Increasing eps_max to 0.19 and continuing attack (restart 4).
-[restart 4] eps_max being utilized: 0.19
-Threshold not reached (dist_cum=18 < 30). Increasing eps_max to 0.22 and continuing attack (restart 5).
-[restart 5] eps_max being utilized: 0.22
-Threshold not reached (dist_cum=16 < 30). Increasing eps_max to 0.25 and continuing attack (restart 6).
-[restart 6] eps_max being utilized: 0.25
-Threshold not reached (dist_cum=20 < 30). Increasing eps_max to 0.28 and continuing attack (restart 7).
-[restart 7] eps_max being utilized: 0.28
-Threshold not reached (dist_cum=24 < 30). Increasing eps_max to 0.31000000000000005 and continuing attack (restart 8).
-[restart 8] eps_max being utilized: 0.31000000000000005
-Reached PDQ distance target; stopping early.
-
-Processed image_02446.jpg
-Outputs saved to images_out:
-  original full-res     : images_out/image_02446__orig_fullRGB.png
-  perturbed full-res    : images_out/image_02446__pert_resized_RGB.png
-PDQ final (small): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
-PDQ final (original): PDQdist=26 PDQsim=0.898 Qorig=100.0 Qpert=100.0
-  Final L2 per pixel for original: 0.14425042271614075
-  Final L2 norm for original: 86.06806945800781
-[restart 0] eps_max being utilized: 0.07
-Threshold not reached (dist_cum=16 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
-[restart 1] eps_max being utilized: 0.1
-Threshold not reached (dist_cum=14 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
-[restart 2] eps_max being utilized: 0.13
-Threshold not reached (dist_cum=18 < 30). Increasing eps_max to 0.16 and continuing attack (restart 3).
-[restart 3] eps_max being utilized: 0.16
-Threshold not reached (dist_cum=20 < 30). Increasing eps_max to 0.19 and continuing attack (restart 4).
-[restart 4] eps_max being utilized: 0.19
-Threshold not reached (dist_cum=22 < 30). Increasing eps_max to 0.22 and continuing attack (restart 5).
-[restart 5] eps_max being utilized: 0.22
-Threshold not reached (dist_cum=20 < 30). Increasing eps_max to 0.25 and continuing attack (restart 6).
-[restart 6] eps_max being utilized: 0.25
-Threshold not reached (dist_cum=22 < 30). Increasing eps_max to 0.28 and continuing attack (restart 7).
-[restart 7] eps_max being utilized: 0.28
-Threshold not reached (dist_cum=26 < 30). Increasing eps_max to 0.31000000000000005 and continuing attack (restart 8).
-[restart 8] eps_max being utilized: 0.31000000000000005
-Reached PDQ distance target; stopping early.
-
-Processed image_05486.jpg
-Outputs saved to images_out:
-  original full-res     : images_out/image_05486__orig_fullRGB.png
-  perturbed full-res    : images_out/image_05486__pert_resized_RGB.png
-PDQ final (small): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
-PDQ final (original): PDQdist=36 PDQsim=0.859 Qorig=100.0 Qpert=100.0
-  Final L2 per pixel for original: 0.13744781911373138
-  Final L2 norm for original: 79.37537384033203
-[restart 0] eps_max being utilized: 0.07
-Threshold not reached (dist_cum=22 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
-[restart 1] eps_max being utilized: 0.1
-Reached PDQ distance target; stopping early.
-
-Processed image_01923.jpg
-Outputs saved to images_out:
-  original full-res     : images_out/image_01923__orig_fullRGB.png
-  perturbed full-res    : images_out/image_01923__pert_resized_RGB.png
-PDQ final (small): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
-PDQ final (original): PDQdist=20 PDQsim=0.922 Qorig=100.0 Qpert=100.0
-  Final L2 per pixel for original: 0.06363750249147415
-  Final L2 norm for original: 39.02177810668945
-[restart 0] eps_max being utilized: 0.07
-Threshold not reached (dist_cum=14 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
-[restart 1] eps_max being utilized: 0.1
-Threshold not reached (dist_cum=24 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
-[restart 2] eps_max being utilized: 0.13
-Reached PDQ distance target; stopping early.
-
-Processed image_02904.jpg
-Outputs saved to images_out:
-  original full-res     : images_out/image_02904__orig_fullRGB.png
-  perturbed full-res    : images_out/image_02904__pert_resized_RGB.png
-PDQ final (small): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
-PDQ final (original): PDQdist=26 PDQsim=0.898 Qorig=100.0 Qpert=100.0
-  Final L2 per pixel for original: 0.07160628587007523
-  Final L2 norm for original: 41.35224151611328
-[restart 0] eps_max being utilized: 0.07
-Threshold not reached (dist_cum=12 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
-[restart 1] eps_max being utilized: 0.1
-Reached PDQ distance target; stopping early.
-
-Processed image_05352.jpg
-Outputs saved to images_out:
-  original full-res     : images_out/image_05352__orig_fullRGB.png
-  perturbed full-res    : images_out/image_05352__pert_resized_RGB.png
-PDQ final (small): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
-PDQ final (original): PDQdist=22 PDQsim=0.914 Qorig=100.0 Qpert=100.0
-  Final L2 per pixel for original: 0.06395493447780609
-  Final L2 norm for original: 39.45039749145508
-[restart 0] eps_max being utilized: 0.07
-Threshold not reached (dist_cum=10 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
-[restart 1] eps_max being utilized: 0.1
-Threshold not reached (dist_cum=12 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
-[restart 2] eps_max being utilized: 0.13
-Threshold not reached (dist_cum=14 < 30). Increasing eps_max to 0.16 and continuing attack (restart 3).
-[restart 3] eps_max being utilized: 0.16
-Threshold not reached (dist_cum=18 < 30). Increasing eps_max to 0.19 and continuing attack (restart 4).
-[restart 4] eps_max being utilized: 0.19
-Threshold not reached (dist_cum=18 < 30). Increasing eps_max to 0.22 and continuing attack (restart 5).
-[restart 5] eps_max being utilized: 0.22
-Threshold not reached (dist_cum=24 < 30). Increasing eps_max to 0.25 and continuing attack (restart 6).
-[restart 6] eps_max being utilized: 0.25
-Threshold not reached (dist_cum=24 < 30). Increasing eps_max to 0.28 and continuing attack (restart 7).
-[restart 7] eps_max being utilized: 0.28
-Reached PDQ distance target; stopping early.
-
-Processed image_07702.jpg
-Outputs saved to images_out:
-  original full-res     : images_out/image_07702__orig_fullRGB.png
-  perturbed full-res    : images_out/image_07702__pert_resized_RGB.png
-PDQ final (small): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
-PDQ final (original): PDQdist=34 PDQsim=0.867 Qorig=100.0 Qpert=100.0
-  Final L2 per pixel for original: 0.13668787479400635
-  Final L2 norm for original: 75.17832946777344
-[restart 0] eps_max being utilized: 0.07
-Threshold not reached (dist_cum=4 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
-[restart 1] eps_max being utilized: 0.1
-Threshold not reached (dist_cum=14 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
-[restart 2] eps_max being utilized: 0.13
-Threshold not reached (dist_cum=18 < 30). Increasing eps_max to 0.16 and continuing attack (restart 3).
-[restart 3] eps_max being utilized: 0.16
-Threshold not reached (dist_cum=18 < 30). Increasing eps_max to 0.19 and continuing attack (restart 4).
-[restart 4] eps_max being utilized: 0.19
-Threshold not reached (dist_cum=20 < 30). Increasing eps_max to 0.22 and continuing attack (restart 5).
-[restart 5] eps_max being utilized: 0.22
-Threshold not reached (dist_cum=22 < 30). Increasing eps_max to 0.25 and continuing attack (restart 6).
-[restart 6] eps_max being utilized: 0.25
-Reached PDQ distance target; stopping early.
-
-Processed image_04048.jpg
-Outputs saved to images_out:
-  original full-res     : images_out/image_04048__orig_fullRGB.png
-  perturbed full-res    : images_out/image_04048__pert_resized_RGB.png
-PDQ final (small): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
-PDQ final (original): PDQdist=24 PDQsim=0.906 Qorig=100.0 Qpert=100.0
-  Final L2 per pixel for original: 0.13804572820663452
-  Final L2 norm for original: 69.70967102050781
-[restart 0] eps_max being utilized: 0.07
-Threshold not reached (dist_cum=16 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
-[restart 1] eps_max being utilized: 0.1
-Threshold not reached (dist_cum=18 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
-[restart 2] eps_max being utilized: 0.13
-Threshold not reached (dist_cum=18 < 30). Increasing eps_max to 0.16 and continuing attack (restart 3).
-[restart 3] eps_max being utilized: 0.16
-Threshold not reached (dist_cum=16 < 30). Increasing eps_max to 0.19 and continuing attack (restart 4).
-[restart 4] eps_max being utilized: 0.19
-Threshold not reached (dist_cum=20 < 30). Increasing eps_max to 0.22 and continuing attack (restart 5).
-[restart 5] eps_max being utilized: 0.22
-Reached PDQ distance target; stopping early.
-
-Processed image_01876.jpg
-Outputs saved to images_out:
-  original full-res     : images_out/image_01876__orig_fullRGB.png
-  perturbed full-res    : images_out/image_01876__pert_resized_RGB.png
-PDQ final (small): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
-PDQ final (original): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
-  Final L2 per pixel for original: 0.11763769388198853
-  Final L2 norm for original: 67.93513488769531
+  Final L2 per pixel for original: 0.1183324083685875
+  Final L2 norm for original: 66.62440490722656
 [restart 0] eps_max being utilized: 0.07
 Threshold not reached (dist_cum=8 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
 [restart 1] eps_max being utilized: 0.1
@@ -211,26 +51,487 @@ Threshold not reached (dist_cum=12 < 30). Increasing eps_max to 0.16 and continu
 [restart 3] eps_max being utilized: 0.16
 Threshold not reached (dist_cum=14 < 30). Increasing eps_max to 0.19 and continuing attack (restart 4).
 [restart 4] eps_max being utilized: 0.19
-Threshold not reached (dist_cum=20 < 30). Increasing eps_max to 0.22 and continuing attack (restart 5).
+Threshold not reached (dist_cum=18 < 30). Increasing eps_max to 0.22 and continuing attack (restart 5).
 [restart 5] eps_max being utilized: 0.22
-Threshold not reached (dist_cum=20 < 30). Increasing eps_max to 0.25 and continuing attack (restart 6).
+Threshold not reached (dist_cum=18 < 30). Increasing eps_max to 0.25 and continuing attack (restart 6).
 [restart 6] eps_max being utilized: 0.25
 Threshold not reached (dist_cum=24 < 30). Increasing eps_max to 0.28 and continuing attack (restart 7).
 [restart 7] eps_max being utilized: 0.28
-Threshold not reached (dist_cum=26 < 30). Increasing eps_max to 0.31000000000000005 and continuing attack (restart 8).
+Threshold not reached (dist_cum=22 < 30). Increasing eps_max to 0.31000000000000005 and continuing attack (restart 8).
 [restart 8] eps_max being utilized: 0.31000000000000005
-Threshold not reached (dist_cum=26 < 30). Increasing eps_max to 0.3400000000000001 and continuing attack (restart 9).
+Threshold not reached (dist_cum=22 < 30). Increasing eps_max to 0.3400000000000001 and continuing attack (restart 9).
 [restart 9] eps_max being utilized: 0.3400000000000001
 Reached PDQ distance target; stopping early.
+
+Processed image_02446.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_02446__orig_fullRGB.png
+  perturbed full-res    : images_out/image_02446__pert_resized_RGB.png
+PDQ final (small): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
+PDQ final (original): PDQdist=32 PDQsim=0.875 Qorig=100.0 Qpert=100.0
+  Final L2 per pixel for original: 0.16769984364509583
+  Final L2 norm for original: 100.0593490600586
+[restart 0] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=10 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.1
+Threshold not reached (dist_cum=12 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.13
+Threshold not reached (dist_cum=18 < 30). Increasing eps_max to 0.16 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.16
+Threshold not reached (dist_cum=24 < 30). Increasing eps_max to 0.19 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.19
+Threshold not reached (dist_cum=26 < 30). Increasing eps_max to 0.22 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.22
+Threshold not reached (dist_cum=24 < 30). Increasing eps_max to 0.25 and continuing attack (restart 6).
+[restart 6] eps_max being utilized: 0.25
+Reached PDQ distance target; stopping early.
+
+Processed image_05486.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_05486__orig_fullRGB.png
+  perturbed full-res    : images_out/image_05486__pert_resized_RGB.png
+PDQ final (small): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
+PDQ final (original): PDQdist=24 PDQsim=0.906 Qorig=100.0 Qpert=100.0
+  Final L2 per pixel for original: 0.12301855534315109
+  Final L2 norm for original: 71.04254913330078
+[restart 0] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=18 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.1
+Threshold not reached (dist_cum=24 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.13
+Reached PDQ distance target; stopping early.
+
+Processed image_01923.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_01923__orig_fullRGB.png
+  perturbed full-res    : images_out/image_01923__pert_resized_RGB.png
+PDQ final (small): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
+PDQ final (original): PDQdist=26 PDQsim=0.898 Qorig=100.0 Qpert=100.0
+  Final L2 per pixel for original: 0.07463718205690384
+  Final L2 norm for original: 45.76665115356445
+[restart 0] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=24 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.1
+Reached PDQ distance target; stopping early.
+
+Processed image_02904.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_02904__orig_fullRGB.png
+  perturbed full-res    : images_out/image_02904__pert_resized_RGB.png
+PDQ final (small): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
+PDQ final (original): PDQdist=24 PDQsim=0.906 Qorig=100.0 Qpert=100.0
+  Final L2 per pixel for original: 0.06204313412308693
+  Final L2 norm for original: 35.82957458496094
+[restart 0] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=14 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.1
+Threshold not reached (dist_cum=24 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.13
+Reached PDQ distance target; stopping early.
+
+Processed image_05352.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_05352__orig_fullRGB.png
+  perturbed full-res    : images_out/image_05352__pert_resized_RGB.png
+PDQ final (small): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
+PDQ final (original): PDQdist=20 PDQsim=0.922 Qorig=100.0 Qpert=100.0
+  Final L2 per pixel for original: 0.0716402605175972
+  Final L2 norm for original: 44.191070556640625
+[restart 0] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=4 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.1
+Threshold not reached (dist_cum=8 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.13
+Threshold not reached (dist_cum=8 < 30). Increasing eps_max to 0.16 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.16
+Threshold not reached (dist_cum=14 < 30). Increasing eps_max to 0.19 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.19
+Threshold not reached (dist_cum=14 < 30). Increasing eps_max to 0.22 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.22
+Threshold not reached (dist_cum=14 < 30). Increasing eps_max to 0.25 and continuing attack (restart 6).
+[restart 6] eps_max being utilized: 0.25
+Threshold not reached (dist_cum=18 < 30). Increasing eps_max to 0.28 and continuing attack (restart 7).
+[restart 7] eps_max being utilized: 0.28
+Threshold not reached (dist_cum=18 < 30). Increasing eps_max to 0.31000000000000005 and continuing attack (restart 8).
+[restart 8] eps_max being utilized: 0.31000000000000005
+Threshold not reached (dist_cum=18 < 30). Increasing eps_max to 0.3400000000000001 and continuing attack (restart 9).
+[restart 9] eps_max being utilized: 0.3400000000000001
+WARNING: Max restarts (9) reached, final PDQdist=20 still < threshold=30.
+
+Processed image_07702.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_07702__orig_fullRGB.png
+  perturbed full-res    : images_out/image_07702__pert_resized_RGB.png
+PDQ final (small): PDQdist=20 PDQsim=0.922 Qorig=100.0 Qpert=100.0
+PDQ final (original): PDQdist=32 PDQsim=0.875 Qorig=100.0 Qpert=100.0
+  Final L2 per pixel for original: 0.1647525131702423
+  Final L2 norm for original: 90.61387634277344
+[restart 0] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=6 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.1
+Threshold not reached (dist_cum=6 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.13
+Threshold not reached (dist_cum=8 < 30). Increasing eps_max to 0.16 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.16
+Threshold not reached (dist_cum=12 < 30). Increasing eps_max to 0.19 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.19
+Threshold not reached (dist_cum=16 < 30). Increasing eps_max to 0.22 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.22
+Threshold not reached (dist_cum=18 < 30). Increasing eps_max to 0.25 and continuing attack (restart 6).
+[restart 6] eps_max being utilized: 0.25
+Threshold not reached (dist_cum=20 < 30). Increasing eps_max to 0.28 and continuing attack (restart 7).
+[restart 7] eps_max being utilized: 0.28
+Threshold not reached (dist_cum=26 < 30). Increasing eps_max to 0.31000000000000005 and continuing attack (restart 8).
+[restart 8] eps_max being utilized: 0.31000000000000005
+Reached PDQ distance target; stopping early.
+
+Processed image_04048.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_04048__orig_fullRGB.png
+  perturbed full-res    : images_out/image_04048__pert_resized_RGB.png
+PDQ final (small): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
+PDQ final (original): PDQdist=28 PDQsim=0.891 Qorig=100.0 Qpert=100.0
+  Final L2 per pixel for original: 0.16142480075359344
+  Final L2 norm for original: 81.5155258178711
+[restart 0] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=16 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.1
+Threshold not reached (dist_cum=18 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.13
+Threshold not reached (dist_cum=22 < 30). Increasing eps_max to 0.16 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.16
+Threshold not reached (dist_cum=24 < 30). Increasing eps_max to 0.19 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.19
+Threshold not reached (dist_cum=24 < 30). Increasing eps_max to 0.22 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.22
+Reached PDQ distance target; stopping early.
+
+Processed image_01876.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_01876__orig_fullRGB.png
+  perturbed full-res    : images_out/image_01876__pert_resized_RGB.png
+PDQ final (small): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
+PDQ final (original): PDQdist=28 PDQsim=0.891 Qorig=100.0 Qpert=100.0
+  Final L2 per pixel for original: 0.11388369649648666
+  Final L2 norm for original: 65.76721954345703
+[restart 0] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=2 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.1
+Threshold not reached (dist_cum=8 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.13
+Threshold not reached (dist_cum=8 < 30). Increasing eps_max to 0.16 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.16
+Threshold not reached (dist_cum=14 < 30). Increasing eps_max to 0.19 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.19
+Threshold not reached (dist_cum=14 < 30). Increasing eps_max to 0.22 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.22
+Threshold not reached (dist_cum=18 < 30). Increasing eps_max to 0.25 and continuing attack (restart 6).
+[restart 6] eps_max being utilized: 0.25
+Threshold not reached (dist_cum=20 < 30). Increasing eps_max to 0.28 and continuing attack (restart 7).
+[restart 7] eps_max being utilized: 0.28
+Threshold not reached (dist_cum=24 < 30). Increasing eps_max to 0.31000000000000005 and continuing attack (restart 8).
+[restart 8] eps_max being utilized: 0.31000000000000005
+Threshold not reached (dist_cum=22 < 30). Increasing eps_max to 0.3400000000000001 and continuing attack (restart 9).
+[restart 9] eps_max being utilized: 0.3400000000000001
+WARNING: Max restarts (9) reached, final PDQdist=26 still < threshold=30.
 
 Processed image_03863.jpg
 Outputs saved to images_out:
   original full-res     : images_out/image_03863__orig_fullRGB.png
   perturbed full-res    : images_out/image_03863__pert_resized_RGB.png
-PDQ final (small): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
-PDQ final (original): PDQdist=26 PDQsim=0.898 Qorig=100.0 Qpert=100.0
-  Final L2 per pixel for original: 0.16101576387882233
-  Final L2 norm for original: 92.98572540283203
+PDQ final (small): PDQdist=26 PDQsim=0.898 Qorig=100.0 Qpert=100.0
+PDQ final (original): PDQdist=28 PDQsim=0.891 Qorig=100.0 Qpert=100.0
+  Final L2 per pixel for original: 0.16643083095550537
+  Final L2 norm for original: 96.11289978027344
 [restart 0] eps_max being utilized: 0.07
 Threshold not reached (dist_cum=10 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
 [restart 1] eps_max being utilized: 0.1
+Threshold not reached (dist_cum=10 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.13
+Threshold not reached (dist_cum=14 < 30). Increasing eps_max to 0.16 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.16
+Threshold not reached (dist_cum=16 < 30). Increasing eps_max to 0.19 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.19
+Threshold not reached (dist_cum=18 < 30). Increasing eps_max to 0.22 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.22
+Threshold not reached (dist_cum=16 < 30). Increasing eps_max to 0.25 and continuing attack (restart 6).
+[restart 6] eps_max being utilized: 0.25
+Threshold not reached (dist_cum=20 < 30). Increasing eps_max to 0.28 and continuing attack (restart 7).
+[restart 7] eps_max being utilized: 0.28
+Reached PDQ distance target; stopping early.
+
+Processed image_01375.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_01375__orig_fullRGB.png
+  perturbed full-res    : images_out/image_01375__pert_resized_RGB.png
+PDQ final (small): PDQdist=34 PDQsim=0.867 Qorig=100.0 Qpert=100.0
+PDQ final (original): PDQdist=40 PDQsim=0.844 Qorig=100.0 Qpert=100.0
+  Final L2 per pixel for original: 0.23420093953609467
+  Final L2 norm for original: 143.6092987060547
+[restart 0] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=14 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.1
+Threshold not reached (dist_cum=12 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.13
+Threshold not reached (dist_cum=20 < 30). Increasing eps_max to 0.16 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.16
+Threshold not reached (dist_cum=22 < 30). Increasing eps_max to 0.19 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.19
+Threshold not reached (dist_cum=26 < 30). Increasing eps_max to 0.22 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.22
+Threshold not reached (dist_cum=28 < 30). Increasing eps_max to 0.25 and continuing attack (restart 6).
+[restart 6] eps_max being utilized: 0.25
+Reached PDQ distance target; stopping early.
+
+Processed image_07143.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_07143__orig_fullRGB.png
+  perturbed full-res    : images_out/image_07143__pert_resized_RGB.png
+PDQ final (small): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
+PDQ final (original): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
+  Final L2 per pixel for original: 0.12286550551652908
+  Final L2 norm for original: 70.90095520019531
+[restart 0] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=8 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.1
+Threshold not reached (dist_cum=12 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.13
+Threshold not reached (dist_cum=12 < 30). Increasing eps_max to 0.16 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.16
+Threshold not reached (dist_cum=12 < 30). Increasing eps_max to 0.19 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.19
+Threshold not reached (dist_cum=16 < 30). Increasing eps_max to 0.22 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.22
+Threshold not reached (dist_cum=14 < 30). Increasing eps_max to 0.25 and continuing attack (restart 6).
+[restart 6] eps_max being utilized: 0.25
+Threshold not reached (dist_cum=20 < 30). Increasing eps_max to 0.28 and continuing attack (restart 7).
+[restart 7] eps_max being utilized: 0.28
+Threshold not reached (dist_cum=18 < 30). Increasing eps_max to 0.31000000000000005 and continuing attack (restart 8).
+[restart 8] eps_max being utilized: 0.31000000000000005
+Threshold not reached (dist_cum=22 < 30). Increasing eps_max to 0.3400000000000001 and continuing attack (restart 9).
+[restart 9] eps_max being utilized: 0.3400000000000001
+WARNING: Max restarts (9) reached, final PDQdist=24 still < threshold=30.
+
+Processed image_02038.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_02038__orig_fullRGB.png
+  perturbed full-res    : images_out/image_02038__pert_resized_RGB.png
+PDQ final (small): PDQdist=24 PDQsim=0.906 Qorig=100.0 Qpert=100.0
+PDQ final (original): PDQdist=24 PDQsim=0.906 Qorig=100.0 Qpert=100.0
+  Final L2 per pixel for original: 0.16500623524188995
+  Final L2 norm for original: 95.29020690917969
+[restart 0] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=6 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.1
+Threshold not reached (dist_cum=14 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.13
+Threshold not reached (dist_cum=18 < 30). Increasing eps_max to 0.16 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.16
+Threshold not reached (dist_cum=18 < 30). Increasing eps_max to 0.19 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.19
+Threshold not reached (dist_cum=24 < 30). Increasing eps_max to 0.22 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.22
+Reached PDQ distance target; stopping early.
+
+Processed image_07149.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_07149__orig_fullRGB.png
+  perturbed full-res    : images_out/image_07149__pert_resized_RGB.png
+PDQ final (small): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
+PDQ final (original): PDQdist=24 PDQsim=0.906 Qorig=100.0 Qpert=100.0
+  Final L2 per pixel for original: 0.11987964063882828
+  Final L2 norm for original: 69.22984313964844
+[restart 0] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=12 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.1
+Threshold not reached (dist_cum=14 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.13
+Threshold not reached (dist_cum=20 < 30). Increasing eps_max to 0.16 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.16
+Threshold not reached (dist_cum=20 < 30). Increasing eps_max to 0.19 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.19
+Threshold not reached (dist_cum=20 < 30). Increasing eps_max to 0.22 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.22
+Threshold not reached (dist_cum=24 < 30). Increasing eps_max to 0.25 and continuing attack (restart 6).
+[restart 6] eps_max being utilized: 0.25
+Reached PDQ distance target; stopping early.
+
+Processed image_05538.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_05538__orig_fullRGB.png
+  perturbed full-res    : images_out/image_05538__pert_resized_RGB.png
+PDQ final (small): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
+PDQ final (original): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
+  Final L2 per pixel for original: 0.13557271659374237
+  Final L2 norm for original: 69.592529296875
+[restart 0] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=18 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.1
+Threshold not reached (dist_cum=22 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.13
+Reached PDQ distance target; stopping early.
+
+Processed image_00038.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_00038__orig_fullRGB.png
+  perturbed full-res    : images_out/image_00038__pert_resized_RGB.png
+PDQ final (small): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
+PDQ final (original): PDQdist=20 PDQsim=0.922 Qorig=100.0 Qpert=100.0
+  Final L2 per pixel for original: 0.07749848067760468
+  Final L2 norm for original: 47.45793151855469
+[restart 0] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=14 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.1
+Threshold not reached (dist_cum=8 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.13
+Threshold not reached (dist_cum=18 < 30). Increasing eps_max to 0.16 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.16
+Threshold not reached (dist_cum=16 < 30). Increasing eps_max to 0.19 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.19
+Reached PDQ distance target; stopping early.
+
+Processed image_02326.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_02326__orig_fullRGB.png
+  perturbed full-res    : images_out/image_02326__pert_resized_RGB.png
+PDQ final (small): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
+PDQ final (original): PDQdist=26 PDQsim=0.898 Qorig=100.0 Qpert=100.0
+  Final L2 per pixel for original: 0.1089995950460434
+  Final L2 norm for original: 56.63785171508789
+[restart 0] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=10 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.1
+Threshold not reached (dist_cum=12 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.13
+Threshold not reached (dist_cum=14 < 30). Increasing eps_max to 0.16 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.16
+Threshold not reached (dist_cum=16 < 30). Increasing eps_max to 0.19 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.19
+Threshold not reached (dist_cum=18 < 30). Increasing eps_max to 0.22 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.22
+Reached PDQ distance target; stopping early.
+
+Processed image_02211.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_02211__orig_fullRGB.png
+  perturbed full-res    : images_out/image_02211__pert_resized_RGB.png
+PDQ final (small): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
+PDQ final (original): PDQdist=32 PDQsim=0.875 Qorig=100.0 Qpert=100.0
+  Final L2 per pixel for original: 0.18245817720890045
+  Final L2 norm for original: 91.22908782958984
+[restart 0] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=12 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.1
+Threshold not reached (dist_cum=16 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.13
+Threshold not reached (dist_cum=20 < 30). Increasing eps_max to 0.16 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.16
+Reached PDQ distance target; stopping early.
+
+Processed image_02430.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_02430__orig_fullRGB.png
+  perturbed full-res    : images_out/image_02430__pert_resized_RGB.png
+PDQ final (small): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
+PDQ final (original): PDQdist=28 PDQsim=0.891 Qorig=100.0 Qpert=100.0
+  Final L2 per pixel for original: 0.09412890672683716
+  Final L2 norm for original: 54.35893630981445
+[restart 0] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=6 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.1
+Threshold not reached (dist_cum=10 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.13
+Threshold not reached (dist_cum=10 < 30). Increasing eps_max to 0.16 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.16
+Threshold not reached (dist_cum=14 < 30). Increasing eps_max to 0.19 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.19
+Threshold not reached (dist_cum=22 < 30). Increasing eps_max to 0.22 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.22
+Threshold not reached (dist_cum=20 < 30). Increasing eps_max to 0.25 and continuing attack (restart 6).
+[restart 6] eps_max being utilized: 0.25
+Threshold not reached (dist_cum=18 < 30). Increasing eps_max to 0.28 and continuing attack (restart 7).
+[restart 7] eps_max being utilized: 0.28
+Threshold not reached (dist_cum=20 < 30). Increasing eps_max to 0.31000000000000005 and continuing attack (restart 8).
+[restart 8] eps_max being utilized: 0.31000000000000005
+Threshold not reached (dist_cum=20 < 30). Increasing eps_max to 0.3400000000000001 and continuing attack (restart 9).
+[restart 9] eps_max being utilized: 0.3400000000000001
+WARNING: Max restarts (9) reached, final PDQdist=26 still < threshold=30.
+
+Processed image_04049.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_04049__orig_fullRGB.png
+  perturbed full-res    : images_out/image_04049__pert_resized_RGB.png
+PDQ final (small): PDQdist=26 PDQsim=0.898 Qorig=100.0 Qpert=100.0
+PDQ final (original): PDQdist=26 PDQsim=0.898 Qorig=100.0 Qpert=100.0
+  Final L2 per pixel for original: 0.16964155435562134
+  Final L2 norm for original: 90.40477752685547
+[restart 0] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=8 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.1
+Threshold not reached (dist_cum=12 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.13
+Threshold not reached (dist_cum=16 < 30). Increasing eps_max to 0.16 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.16
+Threshold not reached (dist_cum=22 < 30). Increasing eps_max to 0.19 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.19
+Reached PDQ distance target; stopping early.
+
+Processed image_07342.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_07342__orig_fullRGB.png
+  perturbed full-res    : images_out/image_07342__pert_resized_RGB.png
+PDQ final (small): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
+PDQ final (original): PDQdist=26 PDQsim=0.898 Qorig=100.0 Qpert=100.0
+  Final L2 per pixel for original: 0.09464062750339508
+  Final L2 norm for original: 54.654449462890625
+[restart 0] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=10 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.1
+Threshold not reached (dist_cum=20 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.13
+Threshold not reached (dist_cum=24 < 30). Increasing eps_max to 0.16 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.16
+Threshold not reached (dist_cum=22 < 30). Increasing eps_max to 0.19 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.19
+Reached PDQ distance target; stopping early.
+
+Processed image_01314.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_01314__orig_fullRGB.png
+  perturbed full-res    : images_out/image_01314__pert_resized_RGB.png
+PDQ final (small): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
+PDQ final (original): PDQdist=28 PDQsim=0.891 Qorig=100.0 Qpert=100.0
+  Final L2 per pixel for original: 0.10569501668214798
+  Final L2 norm for original: 57.11444091796875
+[restart 0] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=12 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.1
+Threshold not reached (dist_cum=12 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.13
+Threshold not reached (dist_cum=16 < 30). Increasing eps_max to 0.16 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.16
+Threshold not reached (dist_cum=22 < 30). Increasing eps_max to 0.19 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.19
+Threshold not reached (dist_cum=20 < 30). Increasing eps_max to 0.22 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.22
+Reached PDQ distance target; stopping early.
+
+Processed image_07160.jpg
+Outputs saved to images_out:
+  original full-res     : images_out/image_07160__orig_fullRGB.png
+  perturbed full-res    : images_out/image_07160__pert_resized_RGB.png
+PDQ final (small): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
+PDQ final (original): PDQdist=30 PDQsim=0.883 Qorig=100.0 Qpert=100.0
+  Final L2 per pixel for original: 0.11372596025466919
+  Final L2 norm for original: 65.6761245727539
+[restart 0] eps_max being utilized: 0.07
+Threshold not reached (dist_cum=4 < 30). Increasing eps_max to 0.1 and continuing attack (restart 1).
+[restart 1] eps_max being utilized: 0.1
+Threshold not reached (dist_cum=10 < 30). Increasing eps_max to 0.13 and continuing attack (restart 2).
+[restart 2] eps_max being utilized: 0.13
+Threshold not reached (dist_cum=12 < 30). Increasing eps_max to 0.16 and continuing attack (restart 3).
+[restart 3] eps_max being utilized: 0.16
+Threshold not reached (dist_cum=14 < 30). Increasing eps_max to 0.19 and continuing attack (restart 4).
+[restart 4] eps_max being utilized: 0.19
+Threshold not reached (dist_cum=20 < 30). Increasing eps_max to 0.22 and continuing attack (restart 5).
+[restart 5] eps_max being utilized: 0.22

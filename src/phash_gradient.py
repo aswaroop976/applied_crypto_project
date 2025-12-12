@@ -3,7 +3,7 @@ import numpy as np
 from PIL import Image
 from image_utils import *
 
-PHASH_THRESHOLD = 6 # Represents hamming distance between PDQ hashes, change later
+PHASH_THRESHOLD = 2 # Represents hamming distance between PDQ hashes, change later
 NUM_ITERATIONS = 150 # Number of iterations our iterative algorithm works for
 EPS_MAX = 0.01 # Max L_inf allowed
 MAX_RESTARTS = 8 # Max amounts of restarts of iterative greedy attack allowed
@@ -105,7 +105,7 @@ def iterative_greedy_attack(orig_rgb, x_small, its=50, M=200, eps_step=0.005, ep
         history.append((iter_idx, dist_cum, sim_cum))
 
         # debug/log
-        print(f"iter {iter_idx:3d}: best_candidate_dist={best_dist:3d} => cum_dist={dist_cum:3d} Phash sim={sim_cum:.3f}")
+        #print(f"iter {iter_idx:3d}: best_candidate_dist={best_dist:3d} => cum_dist={dist_cum:3d} Phash sim={sim_cum:.3f}")
 
         # stopping rule: if we exceed some PDQ distance threshold, break
         if dist_cum >= threshold:   # example threshold, tune to your use-case
@@ -204,26 +204,26 @@ def process_image(path):
     pert_resized_out = os.path.join(OUTPUT_DIR, f"{base}__pert_resized_RGB.png")
     Image.fromarray(to_uint8(perturbed_rgb)).save(pert_resized_out)
 
-    #small stacked: original small grayscale vs (x + bar_delta) small grayscale
-    x_pert_small = np.clip(x + bar_delta, 0.0, 1.0)
-    stacked_small = np.hstack([x, x_pert_small])
-    stacked_small_u8 = to_uint8(stacked_small)
-    stacked_small_img = Image.fromarray(stacked_small_u8, mode="L")
-    stacked_small_out = os.path.join(OUTPUT_DIR, f"{base}__pert_smallstack.png")
-    stacked_small_img.save(stacked_small_out)
+    # small stacked: original small grayscale vs (x + bar_delta) small grayscale
+    #x_pert_small = np.clip(x + bar_delta, 0.0, 1.0)
+    #stacked_small = np.hstack([x, x_pert_small])
+    #stacked_small_u8 = to_uint8(stacked_small)
+    #stacked_small_img = Image.fromarray(stacked_small_u8, mode="L")
+    #stacked_small_out = os.path.join(OUTPUT_DIR, f"{base}__pert_smallstack.png")
+    #stacked_small_img.save(stacked_small_out)
 
     # save a visualization of bar_delta (scale to [0,1] for viewing)
     # We'll map bar_delta (which can be negative) to a viewable grayscale: (bar_delta - min) / (max - min)
-    bd = bar_delta
-    bd_min, bd_max = float(np.min(bd)), float(np.max(bd))
-    if bd_max - bd_min < 1e-8:
-        bd_vis = np.zeros_like(bd)
-    else:
-        bd_vis = (bd - bd_min) / (bd_max - bd_min)
-    bd_vis_u8 = to_uint8(bd_vis)
-    bd_img = Image.fromarray(bd_vis_u8, mode="L")
-    bd_out = os.path.join(OUTPUT_DIR, f"{base}__bar_delta_small.png")
-    bd_img.save(bd_out)
+    #bd = bar_delta
+    #bd_min, bd_max = float(np.min(bd)), float(np.max(bd))
+    #if bd_max - bd_min < 1e-8:
+    #    bd_vis = np.zeros_like(bd)
+    #else:
+    #    bd_vis = (bd - bd_min) / (bd_max - bd_min)
+    #bd_vis_u8 = to_uint8(bd_vis)
+    #bd_img = Image.fromarray(bd_vis_u8, mode="L")
+    #bd_out = os.path.join(OUTPUT_DIR, f"{base}__bar_delta_small.png")
+    #bd_img.save(bd_out)
 
     dist_cum, sim_cum = phash_distance_gray(x, bar_delta)
     dist_full, sim_full = phash_distance_rgb(
@@ -234,8 +234,8 @@ def process_image(path):
     print(f"Outputs saved to {OUTPUT_DIR}:")
     print(f"  original full-res     : {orig_out}")
     print(f"  perturbed full-res    : {pert_resized_out}")
-    print(f"  small stacked (L/R)   : {stacked_small_out}")
-    print(f"  bar_delta visualization: {bd_out}")
+    #print(f"  small stacked (L/R)   : {stacked_small_out}")
+    #print(f"  bar_delta visualization: {bd_out}")
     print(f"Phash final (small): Phashdist={int(dist_cum)} Phashsim={sim_cum:.3f} ")
     print(f"Phash final (original): Phashdist={int(dist_full)} Phashsim={sim_full:.3f}")
     print(f"  Final L2 per pixel for original: {l2_per_pixel_rgb(perturbed_rgb - orig_rgb)}")

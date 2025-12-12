@@ -46,10 +46,6 @@ def add_noise(img, std=0.01):
     return out
 
 def _ensure_rgb_uint8(arr):
-    """
-    PDQ expects an 8-bit array; it works well with 3-channel input.
-    arr can be HxW (grayscale) or HxWxC; returns HxWx3 uint8.
-    """
     if arr.ndim == 2:
         arr = np.stack([arr, arr, arr], axis=2)  # gray -> RGB
     elif arr.ndim == 3 and arr.shape[2] == 1:
@@ -57,19 +53,12 @@ def _ensure_rgb_uint8(arr):
     return arr.astype(np.uint8)
 
 def pdq_dihedral_hashes(arr_uint8_rgb):
-    """
-    Returns (hashes8, quality) using PDQ dihedral variant for rot/flip robustness.
-    hashes8: list/array of 8 binary vectors of length 256 (dtype uint8 or bool)
-    """
     hashes8, quality = pdqhash.compute_dihedral(arr_uint8_rgb)
     # Ensure binary arrays are numpy arrays of 0/1 for distance calc
     hashes8 = [np.array(h, dtype=np.uint8) for h in hashes8]
     return hashes8, quality
 
 def pdq_hamming_distance(hashes_a, hashes_b):
-    """
-    Brute-force best Hamming distance across dihedral variants.
-    """
     best = 256
     for ha in hashes_a:
         for hb in hashes_b:
@@ -108,12 +97,6 @@ def phash_distance_rgb(a_float, b_float):
 
 
 def pdq_distance_gray(x_float, delta_float):
-    """
-    Compute PDQ distance (and similarity) between a grayscale base image x and its
-    perturbed version x + delta. Both are float arrays in [0,1], shape HxW.
-
-    Returns: (distance_0_256, similarity_0_1, q_x, q_xpert)
-    """
     # 1) form perturbed grayscale, clamp to valid range
     x_pert = np.clip(x_float + delta_float, 0.0, 1.0)
 
@@ -131,11 +114,6 @@ def pdq_distance_gray(x_float, delta_float):
     return dist, sim, q1, q2
 
 def pdq_distance_rgb(a_float, b_float):
-    """
-    a_u8, b_u8: HxWx3 uint8 RGB
-    returns: (dist, sim, q_a, q_b) where dist is Hamming distance in [0..256], sim in [0..1]
-    """
-
     img_a = _ensure_rgb_uint8(to_uint8(a_float))
     img_b = _ensure_rgb_uint8(to_uint8(b_float))
 
@@ -157,13 +135,6 @@ def pdq_distance_rgb(a_float, b_float):
 # === IMPLEMENTATION OF ALGORITHM 3: InverseDelta ===
 
 def resize_float_delta(delta_small, out_size):
-    """
-    Resize a float single-channel delta (values may be negative) from small -> out_size (W,H).
-    We encode into uint8 for resizing via PIL then decode back to float:
-      encode: u8 = round((delta + 1) / 2 * 255)
-      decode: delta = (u8/255)*2 - 1
-    This preserves sign and relative magnitudes within [-1,1].
-    """
     # delta_small : Hs x Ws floats (likely small values, e.g. [-0.05, 0.05])
     # map to u8
     u8 = to_uint8((delta_small + 1.0) / 2.0)  # now 0..255
@@ -174,18 +145,6 @@ def resize_float_delta(delta_small, out_size):
     return delta_resized.astype(np.float32)
 
 def inverse_delta_map(orig_rgb_float, delta_gray_resized):
-    """
-    Map a single-channel resized grayscale perturbation (delta_gray_resized: HxW)
-    to a 3-channel perturbation delta_rgb (HxWx3) following Algorithm 3.
-    Steps:
-      - Compute per-pixel mean grayscale intensity mean(X_c) = (R+G+B)/3
-      - For each pixel i and each channel c:
-          if delta_gray_i <= 0:
-              delta_c_i = delta_gray_i * (X_c_i / mean_i)        [if mean>eps]
-          else:
-              delta_c_i = delta_gray_i * ((1 - X_c_i) / (1 - mean_i)) [if 1-mean>eps]
-      - Clamp X_c + delta_c to [0,1] and return the offset (clamped - X_c).
-    """
     eps = 1e-8
     # orig_rgb_float: HxWx3 in [0,1]
     X = orig_rgb_float
